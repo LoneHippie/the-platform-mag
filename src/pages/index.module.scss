@@ -28,15 +28,21 @@
     }
 }
 
-section {
+// section {
+//     padding: 7.5%;
+
+//     @include respond(tablet) {
+//         padding: 7.5% 10%;
+//     }
+// }
+
+.mission_section {
+
     padding: 7.5%;
 
     @include respond(tablet) {
         padding: 7.5% 10%;
     }
-}
-
-.mission_section {
 
     & > h3 {
         font-size: 4.5rem;
@@ -55,6 +61,12 @@ section {
 }
 
 .standards_section {
+    padding: 7.5%;
+
+    @include respond(tablet) {
+        padding: 7.5% 10%;
+    }
+
     background: $black-secondary;
     color: $white-primary;
 
@@ -79,6 +91,11 @@ section {
 }
 
 .team_section {
+    padding: 7.5%;
+
+    @include respond(tablet) {
+        padding: 7.5% 10%;
+    }
 
     & > h3 {
         font-size: 4.5rem;
@@ -102,6 +119,12 @@ section {
 }
 
 .contact_section {
+    padding: 7.5%;
+
+    @include respond(tablet) {
+        padding: 7.5% 10%;
+    }
+
     background: $black-secondary;
 }
 
