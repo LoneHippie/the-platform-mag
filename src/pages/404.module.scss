@@ -1,0 +1,16 @@
+@import "../styles/variables";
+
+.header {
+    position: relative;
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.explanation {
+    line-height: 2.8rem;
+    font-weight: 600;
+
+    color: $black-secondary;
+
+    margin-bottom: 4rem;
+}

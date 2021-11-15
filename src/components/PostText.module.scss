@@ -10,5 +10,10 @@
         font-weight: 600;
 
         color: $black-secondary;
+
+        & > strong {
+            color: $black-primary;
+            text-decoration: underline;
+        }
     }
 }

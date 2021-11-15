@@ -50,7 +50,7 @@ const Nav = ({ darkNavIcons }) => {
                         <li className={classes.nav_btn__item}>
                             <a
                                 className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
-                                href="/"
+                                href="/editions"
                             >
                                 Editions
                             </a>
