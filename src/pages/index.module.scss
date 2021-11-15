@@ -1,0 +1,141 @@
+@import "../styles/media_queries";
+@import "../styles/variables";
+
+.header {
+    width: 100%;
+    height: 55vh;
+    background-image: linear-gradient(to bottom right,
+        rgba($black-secondary, 0.6),
+        rgba($black-secondary, 0.2)
+    ), url('../images/bg_header.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header_title {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & > * {
+        text-align: center;
+        color: $white-primary;
+    }
+}
+
+section {
+    padding: 7.5%;
+
+    @include respond(tablet) {
+        padding: 7.5% 10%;
+    }
+}
+
+.mission_section {
+
+    & > h3 {
+        font-size: 4.5rem;
+        font-family: $font-head;
+        text-decoration: underline;
+        margin-bottom: 4.5rem;
+    }
+
+    & > p {
+        margin-bottom: 3rem;
+        line-height: 2.8rem;
+        font-weight: 600;
+
+        color: $black-secondary;
+    }
+}
+
+.standards_section {
+    background: $black-secondary;
+    color: $white-primary;
+
+    & > h3 {
+        font-size: 4.5rem;
+        font-family: $font-head;
+        text-decoration: underline;
+        margin-bottom: 4.5rem;
+    }
+
+    & > p {
+        margin-bottom: 3rem;
+        line-height: 2.8rem;
+        font-weight: 600;
+
+        color: $white-secondary;
+
+        & > strong {
+            text-decoration: underline;
+        }
+    }
+}
+
+.team_section {
+
+    & > h3 {
+        font-size: 4.5rem;
+        font-family: $font-head;
+        text-decoration: underline;
+        margin-bottom: 4.5rem;
+    }
+}
+
+.team_grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 4rem;
+
+    @include respond(tablet) {
+        grid-template-columns: repeat(2, auto);
+    }
+    @include respond(desktop) {
+        grid-gap: 8rem;
+    }
+}
+
+.contact_section {
+    background: $black-secondary;
+}
+
+.contact_form {
+    border: 3.5px solid $white-secondary;
+    padding: 5%;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+
+        @include respond(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        & > h3 {
+            color: $white-primary;
+            font-size: 4.5rem;
+            font-family: $font-head;
+
+            margin-bottom: 2rem;
+            @include respond(tablet) {
+                margin-bottom: 0;
+            }
+        }
+
+        & > div {
+            display: flex;
+            flex-direction: row;
+
+            & > a > img {
+                height: 5rem;
+                width: 5rem;
+                border-radius: 100px;
+            }
+        }
+    }
+}

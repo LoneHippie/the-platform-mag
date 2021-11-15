@@ -1,0 +1,96 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+@import "../styles/media_queries";
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    margin: 0 auto;
+
+    z-index: 600;
+}
+
+.date_section {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 3.5px solid $black-primary;
+    font-size: 2.5rem;
+
+    &:first-child {
+        text-align: left;
+    }
+    &:not(:first-child) {
+        text-align: right;
+    }
+}
+
+.card_body {
+    display: flex;
+    flex-direction: row;
+    height: 22rem;
+    box-shadow: 4px 4px 12px 4px rgba($black-secondary, 0.4);
+
+    &__title {
+        width: 50%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: center;
+
+        & > * {
+            text-align: center;
+            font-family: $font-head;
+            color: $white-primary;
+        }
+
+        & > strong {
+            display: block;
+            margin: 0 auto;
+            text-transform: capitalize;
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+        }
+
+        & > span {
+            display: block;
+            margin: 0 auto;
+            text-transform: capitalize;
+            font-size: 2.25rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem
+        }
+
+        & > a {
+            @include buttonOutline($white-primary);
+        }
+    }
+
+    &__summary {
+        width: 50%;
+        padding: 0.75rem;
+        background: $white-primary;
+    }
+}
+
+.cta_section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 3.5px solid $black-primary;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    & > a {
+        @include buttonSolid($black-primary);
+        margin-left: 1.5rem;
+    }
+}

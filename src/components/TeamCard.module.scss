@@ -1,0 +1,52 @@
+@import "../styles/media_queries";
+@import "../styles/variables";
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background: $white-secondary;
+    overflow: hidden;
+
+    text-align: center;
+
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+    min-height: 70rem;
+
+    @include respond(tablet) {
+        width: 100%;
+    }
+
+    box-shadow: 4px 4px 12px 4px rgba($black-secondary, 0.4);
+
+    & > img {
+        height: 25rem;
+    }
+
+    & > div {
+        height: 25rem;
+        background-size: cover;
+        background-position: center;
+
+        @include respond(laptop) {
+            height: 30rem;
+        }
+    }
+
+    & > h4 {
+        font-family: $font-head;
+        font-size: 3rem;
+        padding: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    & > p {
+        line-height: 2.5rem;
+        font-weight: 600;
+        padding: 1.5rem;
+
+        color: $black-secondary;
+    }
+}
