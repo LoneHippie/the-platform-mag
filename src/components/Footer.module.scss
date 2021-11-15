@@ -10,6 +10,8 @@
 
 .navigation {
     margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
 
     & > h2 {
         font-family: $font-head;
@@ -35,4 +37,5 @@
 .copyright {
     display: flex;
     flex-direction: column;
+    padding-bottom: 0;
 }

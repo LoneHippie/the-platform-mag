@@ -1,10 +1,20 @@
 import React from 'react';
 
+import useWindowDimensions from '../hooks/useWindowDimensions';
+
 import * as classes from './EditionCardLarge.module.scss';
 
 const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
 
-    console.log(edition)
+    const { screenWidth} = useWindowDimensions();
+
+    const formattedEditionMonth = (month) => {
+        if (screenWidth >= 568) return month;
+
+        let formattedStr = month.split(' ');
+
+        return `${formattedStr[0].slice(0, 3)} ${formattedStr[1]}`;
+    }
 
     const editionCover = `
         linear-gradient(to bottom right,
@@ -27,7 +37,7 @@ const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
                 style={{borderBottom: isFeatured ? '3.5px solid #FFFFFF' : '3.5px solid #000000'}}
             >
                 <span style={{color: isFeatured ? '#FFFFFF' : '#000000'}}>{isLatest ? "Latest Edition" : ''}</span>
-                <span style={{color: isFeatured ? '#FFFFFF' : '#000000'}}>{edition.editionMonth}</span>
+                <span style={{color: isFeatured ? '#FFFFFF' : '#000000'}}>{formattedEditionMonth(edition.editionMonth)}</span>
             </div>
 
             <div className={classes.card_body}>
@@ -55,8 +65,8 @@ const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
             <div className={classes.cta_section}>
                 { isFeatured ? (
                     <>
-                        <a href="/catalogue">Past Posts</a>
-                        <a href="/editions">Past Editions</a>
+                        <a href="/catalogue" alt="Go to past articles and interviews">Past Posts</a>
+                        <a href="/editions" alt="Go to past Platform editions">Past Editions</a>
                     </>
                 ) : '' }
             </div>

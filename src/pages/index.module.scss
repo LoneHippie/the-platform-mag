@@ -14,9 +14,13 @@
 
 .header_title {
     position: relative;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include respond(landscapePhone) {
+        top: 50%;
+    }
 
     & > * {
         text-align: center;
