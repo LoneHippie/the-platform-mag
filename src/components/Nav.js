@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LogoDark from '../images/platform_logo_dark.svg';
-import LogoLight from '../images/platform_logo_light.svg';
+import LogoDark from './../images/platform_logo_dark.svg';
+import LogoLight from './../images/platform_logo_light.svg';
 
 import * as classes from './Nav.module.scss';
 

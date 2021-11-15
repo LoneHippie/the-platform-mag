@@ -1,20 +1,18 @@
-import React from "react";
+import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import EditionCardLarge from "../components/EditionCardLarge";
-import TeamCard from "../components/TeamCard";
-import ContactForm from "../components/ContactForm";
+import Layout from './../components/Layout';
+import Seo from './../components/Seo';
+import EditionCardLarge from './../components/EditionCardLarge';
+import TeamCard from './../components/TeamCard';
+import ContactForm from './../components/ContactForm';
 
-import IconFB from "../images/icon-facebook.svg";
-import IconTwitter from "../images/icon-twitter.svg";
+import IconFB from './../images/icon-facebook.svg';
+import IconTwitter from './../images/icon-twitter.svg';
 
 import * as classes from './index.module.scss';
 
 const IndexPage = ({ data }) => {
-
-	console.log(data.team)
 
 	return (
 		<Layout darkNavIcons={false} darkFooterBackground={false}>

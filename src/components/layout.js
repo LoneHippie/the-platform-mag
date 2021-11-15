@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import Nav from './Nav';
 import Footer from './Footer';
 
-import '../styles/base.scss';
+import './../styles/base.scss';
 import * as classes from './Layout.module.scss';
 
 const Layout = ({ children, darkNavIcons, darkFooterBackground }) => {

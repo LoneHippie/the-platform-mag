@@ -1,12 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
+import Layout from './../components/Layout';
 import PostContentLayout from '../components/PostContentLayout';
-import Seo from '../components/Seo';
-import PostText from '../components/PostText';
+import Seo from './../components/Seo';
+import PostText from './../components/PostText';
 
-import Placeholder from '../images/author_placeholder.svg';
+import Placeholder from './../images/author_placeholder.svg';
 
 import * as classes from './article.module.scss';
 
