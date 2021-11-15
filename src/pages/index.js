@@ -96,11 +96,13 @@ const IndexPage = ({ data }) => {
 						<div>
 							<a href="https://facebook.com">
 								<img 
+									alt="Go check out our Facebook page"
 									src={IconFB}
 								/>
 							</a>
 							<a href="https://twitter.com">
 								<img 
+									alt="Go check out our Twitter"
 									src={IconTwitter}
 								/>
 							</a>
