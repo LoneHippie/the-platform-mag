@@ -25,6 +25,17 @@ const Interview = ({ data }) => {
                 <h2 className={classes.subtitle}>{data.interview.subtitle}</h2>
 
                 <PostText text={data.interview.text.text} />
+
+                {
+                    data.interview.isPartOfEdition ? (
+                        <a  
+                            className={classes.back_button}
+                            href={`/${data.interview.editionSlug}`}
+                            alt="Go back to the edition home page"
+                        >Back To Edition</a>
+                    ) : null
+                }
+
             </PostContentLayout>
 
         </Layout>
@@ -49,6 +60,8 @@ export const pageQuery = graphql`
             text {
                 text
             }
+            isPartOfEdition
+            editionSlug
         }
         editions: allContentfulEdition {
             edges {

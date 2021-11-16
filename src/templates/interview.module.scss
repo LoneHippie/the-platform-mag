@@ -32,3 +32,9 @@
     margin-bottom: 4rem;
     line-height: 3.1rem;
 }
+
+.back_button {
+    @include buttonOutline($black-primary);
+    display: block;
+    margin: 4rem 0;
+}

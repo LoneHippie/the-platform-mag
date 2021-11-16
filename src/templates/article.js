@@ -39,6 +39,17 @@ const Article = ({ data }) => {
                 </div>
 
                 <PostText text={data.article.text.text} />
+
+                {
+                    data.article.isPartOfEdition ? (
+                        <a  
+                            className={classes.back_button}
+                            href={`/${data.article.editionSlug}`}
+                            alt="Go back to the edition home page"
+                        >Back To Edition</a>
+                    ) : null
+                }
+
             </PostContentLayout>
 
         </Layout>
@@ -68,6 +79,8 @@ export const pageQuery = graphql`
             text {
                 text
             }
+            isPartOfEdition
+            editionSlug
         }
         editions: allContentfulEdition {
             edges {

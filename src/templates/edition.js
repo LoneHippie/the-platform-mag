@@ -12,8 +12,6 @@ import * as classes from './edition.module.scss';
 
 const Edition = ({ data }) => {
 
-    console.log(data);
-
     const editionCover = `
         linear-gradient(to bottom right,
             rgba(44, 44, 44, 0.7),
