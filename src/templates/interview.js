@@ -5,6 +5,7 @@ import Layout from './../components/Layout';
 import PostContentLayout from './../components/PostContentLayout';
 import Seo from './../components/Seo';
 import PostText from './../components/PostText';
+import RecentEditionsBar from './../components/RecentEditionsBar';
 
 import * as classes from './interview.module.scss';
 
@@ -14,25 +15,33 @@ const Interview = ({ data }) => {
         <Layout darkNavIcons={true} darkFooterBackground={true}>
             <Seo title={data.interview.title} />
 
-            <PostContentLayout>
-                <img 
-                    className={classes.cover}
-                    src={`https:${data.interview.coverImage.file.url}`}
-                    alt={data.interview.coverImage.description}
-                />
+            <PostContentLayout includeRecentEditionsBar={!data.interview.isPartOfEdition}>
+                <section className={!data.interview.isPartOfEdition ? classes.main_content : ''}>
+                    <img 
+                        className={classes.cover}
+                        src={`https:${data.interview.coverImage.file.url}`}
+                        alt={data.interview.coverImage.description}
+                    />
 
-                <h1 className={classes.title}>{data.interview.title}</h1>
-                <h2 className={classes.subtitle}>{data.interview.subtitle}</h2>
+                    <h1 className={classes.title}>{data.interview.title}</h1>
+                    <h2 className={classes.subtitle}>{data.interview.subtitle}</h2>
 
-                <PostText text={data.interview.text.text} />
+                    <PostText text={data.interview.text.text} />
+
+                    {
+                        data.interview.isPartOfEdition ? (
+                            <a  
+                                className={classes.back_button}
+                                href={`/${data.interview.editionSlug}`}
+                                alt="Go back to the edition home page"
+                            >Back To Edition</a>
+                        ) : null
+                    }
+                </section>
 
                 {
-                    data.interview.isPartOfEdition ? (
-                        <a  
-                            className={classes.back_button}
-                            href={`/${data.interview.editionSlug}`}
-                            alt="Go back to the edition home page"
-                        >Back To Edition</a>
+                    !data.interview.isPartOfEdition ? (
+                        <RecentEditionsBar editions={data.editions.edges} />
                     ) : null
                 }
 
@@ -73,9 +82,8 @@ export const pageQuery = graphql`
                   }
                   editionMonth(formatString: "MMMM YYYY")
                   editionTitle
-                  editionSummary {
-                      editionSummary
-                    }
+                  slug
+                  editionNumber
                 }
             }
         }

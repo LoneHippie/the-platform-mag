@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import PostContentLayout from '../components/PostContentLayout';
 import Seo from './../components/Seo';
 import PostText from './../components/PostText';
+import RecentEditionsBar from './../components/RecentEditionsBar';
 
 import Placeholder from './../images/author_placeholder.svg';
 
@@ -16,37 +17,45 @@ const Article = ({ data }) => {
         <Layout darkNavIcons={true} darkFooterBackground={true}>
             <Seo title={data.article.title} />
 
-            <PostContentLayout>
-                <img 
-                    className={classes.cover}
-                    src={`https:${data.article.coverImage.file.url}`}
-                    alt={data.article.coverImage.description}
-                />
-
-                <h1 className={classes.title}>{data.article.title}</h1>
-
-                <div className={classes.meta_section}>
+            <PostContentLayout includeRecentEditionsBar={!data.article.isPartOfEdition}>
+                <section className={!data.article.isPartOfEdition ? classes.main_content : ''}>
                     <img 
-                        className={classes.author_image}
-                        src={data.article.authorImage ? `https:${data.article.authorImage.file.url}` : Placeholder}
-                        alt={`The author for this article`}
+                        className={classes.cover}
+                        src={`https:${data.article.coverImage.file.url}`}
+                        alt={data.article.coverImage.description}
                     />
 
-                    <div className={classes.meta_details}>
-                        <h3>{data.article.author}</h3>
-                        <h4>{data.article.postDate}</h4>
-                    </div>
-                </div>
+                    <h1 className={classes.title}>{data.article.title}</h1>
 
-                <PostText text={data.article.text.text} />
+                    <div className={classes.meta_section}>
+                        <img 
+                            className={classes.author_image}
+                            src={data.article.authorImage ? `https:${data.article.authorImage.file.url}` : Placeholder}
+                            alt={`The author for this article`}
+                        />
+
+                        <div className={classes.meta_details}>
+                            <h3>{data.article.author}</h3>
+                            <h4>{data.article.postDate}</h4>
+                        </div>
+                    </div>
+
+                    <PostText text={data.article.text.text} />
+
+                    {
+                        data.article.isPartOfEdition ? (
+                            <a  
+                                className={classes.back_button}
+                                href={`/${data.article.editionSlug}`}
+                                alt="Go back to the edition home page"
+                            >Back To Edition</a>
+                        ) : null
+                    }
+                </section>
 
                 {
-                    data.article.isPartOfEdition ? (
-                        <a  
-                            className={classes.back_button}
-                            href={`/${data.article.editionSlug}`}
-                            alt="Go back to the edition home page"
-                        >Back To Edition</a>
+                    !data.article.isPartOfEdition ? (
+                        <RecentEditionsBar editions={data.editions.edges} />
                     ) : null
                 }
 
@@ -92,9 +101,8 @@ export const pageQuery = graphql`
                   }
                   editionMonth(formatString: "MMMM YYYY")
                   editionTitle
-                  editionSummary {
-                      editionSummary
-                    }
+                  slug
+                  editionNumber
                 }
             }
         }

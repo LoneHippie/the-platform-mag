@@ -10,7 +10,7 @@ const NotFoundPage = () => (
   	<Layout darkNavIcons={true} darkFooterBackground={true}>
 		<Seo title="404: Not found" />
 		
-		<PostContentLayout>
+		<PostContentLayout includeRecentEditionsBar={false}>
 			<header className={classes.header}>
 				<h1>404: Not Found</h1>
 				<p>This route doesn&#39;t exist...</p>

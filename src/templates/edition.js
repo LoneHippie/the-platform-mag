@@ -59,7 +59,7 @@ const Edition = ({ data }) => {
 
 			</header>
 
-            <PostContentLayout>
+            <PostContentLayout includeRecentEditionsBar={false}>
 
                 <section className={classes.notes_section}>
                     <h3>Editor's Note</h3>

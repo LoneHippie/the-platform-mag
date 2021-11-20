@@ -9,7 +9,7 @@ import * as classes from './editions.module.scss';
 
 const EditionsPage = ({ data }) => {
 
-    const sortedEditions = data.editions.edges.reverse();
+    const sortedEditions = data.editions.edges.sort((a, b) => b.node.editionNumber - a.node.editionNumber)
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
@@ -62,6 +62,7 @@ export const pageQuery = graphql`
                         editionSummary
                     }
                     slug
+                    editionNumber
                 }
             }
         }
