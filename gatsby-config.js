@@ -7,6 +7,7 @@ module.exports = {
     title: `The Platform`,
     description: `The Platform blog home website.`,
     author: `Jordan Hlebechuk`,
+    image: '/platform_logo_dark.svg'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

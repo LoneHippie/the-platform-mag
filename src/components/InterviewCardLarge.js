@@ -19,7 +19,7 @@ const InterviewCardLarge = ({ interview }) => {
                 alt={'Read the full interview here'}
                 className={classes.cta_button}
             >
-                Read More
+                Read Full
             </a>
         </article>
     )

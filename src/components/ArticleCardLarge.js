@@ -32,7 +32,7 @@ const ArticleCardLarge = ({ article }) => {
                 alt={'Read the full article here'}
                 className={classes.cta_button}
             >
-                Read More
+                Read Full
             </a>
         </article>
     )

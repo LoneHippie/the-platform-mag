@@ -35,8 +35,8 @@ const Article = ({ data }) => {
                         />
 
                         <div className={classes.meta_details}>
-                            <h3>{data.article.author}</h3>
-                            <h4>{data.article.postDate}</h4>
+                            <h2>{data.article.author}</h2>
+                            <h3>{data.article.postDate}</h3>
                         </div>
                     </div>
 
