@@ -7,7 +7,7 @@ module.exports = {
     title: `The Platform`,
     description: `The Platform blog home website.`,
     author: `Jordan Hlebechuk`,
-    image: '/platform_logo_dark.svg'
+    image: '/logo_full.svg'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,7 +38,7 @@ module.exports = {
         background_color: `#2C2C2C`,
         theme_color: `#2C2C2C`,
         display: `minimal-ui`,
-        icon: `src/images/platform_logo_dark.svg`, // This path is relative to the root of the site.
+        icon: `src/images/logo_full.svg`, // This path is relative to the root of the site.
       },
     }
   ],
