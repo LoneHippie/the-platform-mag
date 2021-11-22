@@ -7,7 +7,6 @@ module.exports = {
     title: `The Platform`,
     description: `The Platform blog home website.`,
     author: `Jordan Hlebechuk`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
