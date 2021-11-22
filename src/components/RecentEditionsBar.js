@@ -6,6 +6,8 @@ import useWindowDimensions from './../hooks/useWindowDimensions';
 
 import * as classes from './RecentEditionsBar.module.scss';
 
+//TODO ::: Add More Editions button to bottom of section
+
 const RecentEditionsBar = ({ editions }) => {
 
     const { screenWidth} = useWindowDimensions();
