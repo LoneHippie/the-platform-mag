@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
 			</header>
 
 			<EditionCardLarge 
-				edition={data.edition}
+				edition={data.edition.edges[0].node}
 				isFeatured={true}
 				isLatest={true}
 			/>
@@ -123,18 +123,22 @@ export default IndexPage;
 
 export const pageQuery = graphql`
 	query {
-		edition: contentfulEdition(editionNumber: {lt: 1000}) {
-			editionTitle
-			coverImage {
-				file {
-					url
+		edition: allContentfulEdition(sort: {fields: editionNumber, order: DESC}) {
+			edges {
+				node {
+					editionTitle
+					coverImage {
+						file {
+							url
+						}
+					}
+					editionMonth(formatString: "MMMM YYYY")
+					editionSummary {
+						editionSummary
+					}
+					slug
 				}
 			}
-			editionMonth(formatString: "MMMM YYYY")
-			editionSummary {
-				editionSummary
-			}
-			slug
 		}
 		team: allContentfulTeamMember(sort: {fields: createdAt}) {
 			edges {
