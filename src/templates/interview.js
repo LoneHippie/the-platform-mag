@@ -13,7 +13,12 @@ const Interview = ({ data }) => {
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
-            <Seo title={data.interview.title} propImage={`https:${data.interview.coverImage.file.url}`} />
+            <Seo 
+                title={data.interview.title} 
+                propImage={`https:${data.interview.coverImage.file.url}`} 
+                description={"Exclusive interview only on The Platform Mag, read the full article here"}
+                type="article"
+            />
 
             <PostContentLayout includeRecentEditionsBar={!data.interview.isPartOfEdition}>
                 <section className={!data.interview.isPartOfEdition ? classes.main_content : ''}>

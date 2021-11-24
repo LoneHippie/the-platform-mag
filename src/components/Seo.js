@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function Seo({ description, lang, meta, title, propImage }) {
+function Seo({ description, lang, meta, title, propImage, type }) {
 
   const { site } = useStaticQuery(
     graphql`
@@ -32,7 +32,6 @@ function Seo({ description, lang, meta, title, propImage }) {
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      propImage={propImage}
       meta={[
         {
           name: `description`,
@@ -56,7 +55,7 @@ function Seo({ description, lang, meta, title, propImage }) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type || `website`,
         },
         {
           name: `twitter:card`,

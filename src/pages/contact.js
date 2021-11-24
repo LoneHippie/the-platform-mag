@@ -15,7 +15,10 @@ const ContactPage = () => {
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
-            <Seo title="Get in Touch" />
+            <Seo 
+                title="Get in Touch" 
+                description={"Have some feedback or want to reach out for potential business or advertising opportunities? Contact us here"}
+            />
 
             <PostContentLayout includeRecentEditionsBar={false}>
                 <header className={classes.header}>

@@ -51,7 +51,10 @@ const CataloguePage = ({ data }) => {
 
     return (
         <Layout darkNavIcons={false} darkFooterBackground={true}>
-            <Seo title="Catalogue" />
+            <Seo 
+                title="Catalogue" 
+                description={"Our full catalogue/archive of exclusive interviews and articles"}
+            />
 
             <header className={classes.header}>
                 <h1>PLATFORM CATALOGUE</h1>

@@ -13,7 +13,10 @@ const EditionsPage = ({ data }) => {
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
-            <Seo title="Editions" />
+            <Seo 
+                title="Editions" 
+                description={"A collection of all Platform Mag full editions. Read the latest edition and more here"}
+            />
 
             <header className={classes.header}>
                 <h1>Platform Editions</h1>

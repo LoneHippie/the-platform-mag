@@ -45,7 +45,11 @@ const Edition = ({ data }) => {
 
     return (
         <Layout darkNavIcons={false} darkFooterBackground={true}>
-            <Seo title={data.edition.editionTitle} propImage={`https:${data.edition.coverImage.file.url}`}/>
+            <Seo 
+                title={data.edition.editionTitle} 
+                propImage={`https:${data.edition.coverImage.file.url}`}
+                description={`The Platform Mag's ${data.edition.slug.replaceAll(/-/g, ' ')}, ${data.edition.editionTitle}`}
+            />
 
             <header 
                 className={classes.header}

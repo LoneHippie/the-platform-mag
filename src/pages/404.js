@@ -8,7 +8,7 @@ import * as classes from './404.module.scss';
 
 const NotFoundPage = () => (
   	<Layout darkNavIcons={true} darkFooterBackground={true}>
-		<Seo title="404: Not found" />
+		<Seo title="404: Not found" description={"This page does not exist or refused to load"} />
 		
 		<PostContentLayout includeRecentEditionsBar={false}>
 			<header className={classes.header}>
