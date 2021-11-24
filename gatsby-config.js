@@ -7,7 +7,8 @@ module.exports = {
     title: `The Platform`,
     description: `The Platform blog home website.`,
     author: `Jordan Hlebechuk`,
-    image: '/logo_full.svg'
+    image: '/logo_full.svg',
+    url: 'https://theplatformmag.netlify.app'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

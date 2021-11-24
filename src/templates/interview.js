@@ -13,7 +13,7 @@ const Interview = ({ data }) => {
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
-            <Seo title={data.interview.title} />
+            <Seo title={data.interview.title} propImage={`https:${data.interview.coverImage.file.url}`} />
 
             <PostContentLayout includeRecentEditionsBar={!data.interview.isPartOfEdition}>
                 <section className={!data.interview.isPartOfEdition ? classes.main_content : ''}>

@@ -45,7 +45,7 @@ const Edition = ({ data }) => {
 
     return (
         <Layout darkNavIcons={false} darkFooterBackground={true}>
-            <Seo title={data.edition.editionTitle} />
+            <Seo title={data.edition.editionTitle} propImage={`https:${data.edition.coverImage.file.url}`}/>
 
             <header 
                 className={classes.header}

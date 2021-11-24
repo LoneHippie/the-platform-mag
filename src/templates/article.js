@@ -15,7 +15,7 @@ const Article = ({ data }) => {
 
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
-            <Seo title={data.article.title} />
+            <Seo title={data.article.title} propImage={`https:${data.article.coverImage.file.url}`} />
 
             <PostContentLayout includeRecentEditionsBar={!data.article.isPartOfEdition}>
                 <section className={!data.article.isPartOfEdition ? classes.main_content : ''}>
