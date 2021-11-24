@@ -6,6 +6,8 @@
     flex-direction: column;
     width: 100%;
 
+    background: $black-secondary;
+
     & > button {
         @include buttonSolid($white-primary);
         //for having button on right side
