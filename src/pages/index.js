@@ -8,7 +8,7 @@ import TeamCard from './../components/TeamCard';
 import ContactForm from './../components/ContactForm';
 
 import IconFB from './../images/icon-facebook.svg';
-import IconTwitter from './../images/icon-twitter.svg';
+import IconInsta from './../images/icon-insta.svg';
 
 import * as classes from './index.module.scss';
 
@@ -100,12 +100,12 @@ const IndexPage = ({ data }) => {
 									src={IconFB}
 								/>
 							</a>
-							<a href="https://twitter.com">
-								<img 
-									alt="Go check out our Twitter"
-									src={IconTwitter}
-								/>
-							</a>
+							<a href="https://instagram.com/theplatformmag/">
+                                <img 
+                                    alt="Go check out our Instagram"
+                                    src={IconInsta}
+                                />
+                            </a>
 						</div>
 
 					</div>

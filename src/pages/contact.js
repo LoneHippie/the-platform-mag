@@ -7,7 +7,7 @@ import PostContentLayout from './../components/PostContentLayout';
 import ContactForm from './../components/ContactForm';
 
 import IconFB from './../images/icon-facebook.svg';
-import IconTwitter from './../images/icon-twitter.svg';
+import IconInsta from './../images/icon-insta.svg';
 
 import * as classes from './contact.module.scss';
 
@@ -46,10 +46,10 @@ const ContactPage = () => {
                                     src={IconFB}
                                 />
                             </a>
-                            <a href="https://twitter.com">
+                            <a href="https://instagram.com/theplatformmag/">
                                 <img 
-                                    alt="Go check out our Twitter"
-                                    src={IconTwitter}
+                                    alt="Go check out our Instagram"
+                                    src={IconInsta}
                                 />
                             </a>
                         </div>

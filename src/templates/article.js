@@ -41,7 +41,7 @@ const Article = ({ data }) => {
 
                         <div className={classes.meta_details}>
                             <h2>{data.article.author}</h2>
-                            <h3>{data.article.postDate}</h3>
+                            <h3>{data.article.isPartOfEdition ? data.article.postDate.slice(3) : data.article.postDate}</h3>
                         </div>
                     </div>
 
