@@ -8,8 +8,6 @@ const PostText = ({ text }) => {
     const converter = new showdown.Converter();
     const HTML = converter.makeHtml(text);
 
-    console.log(HTML);
-
     return (
         <div 
             className={classes.post_body}

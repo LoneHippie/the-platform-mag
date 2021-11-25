@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import Logo from './../images/logo_full.svg';
+
 function Seo({ description, lang, meta, title, propImage, type }) {
 
   const { site } = useStaticQuery(
@@ -23,7 +25,6 @@ function Seo({ description, lang, meta, title, propImage, type }) {
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
-  const seoImage = `${site.url}${site.image}`;
 
   return (
     <Helmet
@@ -39,7 +40,7 @@ function Seo({ description, lang, meta, title, propImage, type }) {
         },
         {
           name: 'image',
-          content: propImage || seoImage
+          content: propImage || Logo
         },
         {
           property: `og:title`,
@@ -47,7 +48,7 @@ function Seo({ description, lang, meta, title, propImage, type }) {
         },
         {
           propery: `og:image`,
-          content: propImage || seoImage
+          content: propImage || Logo
         },
         {
           property: `og:description`,

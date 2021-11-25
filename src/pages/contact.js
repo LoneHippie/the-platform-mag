@@ -40,7 +40,7 @@ const ContactPage = () => {
                         <h2>Contact Us</h2>
 
                         <div>
-                            <a href="https://facebook.com">
+                            <a href="https://facebook.com/ThePlatformMagazine/">
                                 <img 
                                     alt="Go check out our Facebook page"
                                     src={IconFB}
