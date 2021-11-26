@@ -26,6 +26,7 @@ const ArticleCardLarge = ({ article }) => {
                     className={classes.author_image}
                     src={article.authorImage ? `https:${article.authorImage.file.url}` : Placeholder}
                     alt={`The author for this article`}
+                    loading="lazy"
                 />
 
                 <div className={classes.meta_details}>
