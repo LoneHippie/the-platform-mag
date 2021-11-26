@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useOnScreen from './../hooks/useOnScreen';
 import showdown from 'showdown';
 
 import * as classes from './InterviewCardLarge.module.scss';
 
 const InterviewCardLarge = ({ interview }) => {
+
+    const ref = useRef();
+    const inView = useOnScreen(ref);
 
     const formattedText = () => {
         let converter = new showdown.Converter();
@@ -12,7 +16,15 @@ const InterviewCardLarge = ({ interview }) => {
     };
 
     return (
-        <article className={classes.card}>
+        <article 
+            className={classes.card}
+            style={{
+                opacity: inView ? '1' : '0',
+                transform: inView ? 'translateX(0)' : 'translateX(-15rem)',
+                transition: 'all 650ms' 
+            }}
+            ref={ref}
+        >
             <img 
                 className={classes.cover}
                 src={`https:${interview.coverImage.file.url}`}

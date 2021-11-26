@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import useOnScreen from './../hooks/useOnScreen';
 
 import * as classes from './EditionCardLarge.module.scss';
 
 const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
 
     const { screenWidth} = useWindowDimensions();
+
+    const ref = useRef();
+    const inView = useOnScreen(ref);
 
     const formattedEditionMonth = (month) => {
         if (screenWidth >= 568) return month;
@@ -28,8 +32,12 @@ const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
             className={classes.card}
             style={{
                 marginTop: isFeatured ? '-10rem' : '0',
-                marginBottom: isFeatured ? '3rem' : '1rem'
+                marginBottom: isFeatured ? '3rem' : '1rem',
+                opacity: inView ? '1' : '0',
+                transform: inView ? 'translateY(0)' : 'translateY(10rem)',
+                transition: 'all 650ms'
             }}
+            ref={ref}
         >
 
             <div 

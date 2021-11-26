@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import useOnScreen from './../hooks/useOnScreen';
 import showdown from 'showdown';
 
 import Placeholder from './../images/author_placeholder.svg';
@@ -7,6 +8,9 @@ import * as classes from './ArticleCardLarge.module.scss';
 
 const ArticleCardLarge = ({ article }) => {
 
+    const ref = useRef();
+    const inView = useOnScreen(ref);
+
     const formattedText = () => {
         let converter = new showdown.Converter();
         let HTML = converter.makeHtml(article.text.text);
@@ -14,11 +18,19 @@ const ArticleCardLarge = ({ article }) => {
     };
 
     return (
-        <article className={classes.card}>
+        <article 
+            className={classes.card} ref={ref}
+            style={{
+                opacity: inView ? '1' : '0',
+                transform: inView ? 'translateX(0)' : 'translateX(-15rem)',
+                transition: 'all 650ms' 
+            }}
+        >
             <img 
                 className={classes.cover}
                 src={`https:${article.coverImage.file.url}`}
                 alt={article.coverImage.description}
+                loading="eager"
             />
             <h4 className={classes.title}>{article.title}</h4>
             <div className={classes.meta_section}>
