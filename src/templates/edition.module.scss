@@ -31,7 +31,11 @@
     & > h1 {
         margin-bottom: 2rem;
         text-transform: capitalize;
-        line-height: 4rem;
+        line-height: 4.1rem;
+        
+        @include respond(tablet) {
+            line-height: 5.8rem;
+        }
     }
 }
 

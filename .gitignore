@@ -67,3 +67,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+#unused pages
+/src/pages/catalogue.js
+/src/pages/catalogue.module.scss

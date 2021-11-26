@@ -65,7 +65,7 @@ const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
             <div className={classes.cta_section}>
                 { isFeatured ? (
                     <>
-                        <a href="/catalogue" alt="Go to past articles and interviews">Past Posts</a>
+                        {/* <a href="/catalogue" alt="Go to past articles and interviews">Past Posts</a> */}
                         <a href="/editions" alt="Go to past Platform editions">Past Editions</a>
                     </>
                 ) : '' }

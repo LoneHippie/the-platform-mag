@@ -39,14 +39,14 @@ const Nav = ({ darkNavIcons }) => {
                                 Home
                             </a>
                         </li>
-                        <li className={classes.nav_btn__item}>
+                        {/* <li className={classes.nav_btn__item}>
                             <a
                                 className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
                                 href="/catalogue"
                             >
                                 Catalogue
                             </a>
-                        </li>
+                        </li> */}
                         <li className={classes.nav_btn__item}>
                             <a
                                 className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}

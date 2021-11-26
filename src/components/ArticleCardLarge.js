@@ -1,10 +1,17 @@
 import React from 'react';
+import showdown from 'showdown';
 
 import Placeholder from './../images/author_placeholder.svg';
 
 import * as classes from './ArticleCardLarge.module.scss';
 
 const ArticleCardLarge = ({ article }) => {
+
+    const formattedText = () => {
+        let converter = new showdown.Converter();
+        let HTML = converter.makeHtml(article.text.text);
+        return HTML;
+    };
 
     return (
         <article className={classes.card}>
@@ -26,7 +33,10 @@ const ArticleCardLarge = ({ article }) => {
                     <h6>{article.postDate}</h6>
                 </div>
             </div>
-            <p className={classes.preview_text}>{`${article.text.text.slice(0, 160).trim()}...`}</p>
+            <div 
+                className={classes.preview_text} 
+                dangerouslySetInnerHTML={{ __html: formattedText() }}
+            />
             <a
                 href={article.isPartOfEdition ? `/${article.editionSlug}/${article.slug}` : `/article/${article.slug}`}
                 alt={'Read the full article here'}

@@ -35,13 +35,13 @@ const EditionsPage = ({ data }) => {
                 }
             </section>
 
-            <a 
+            {/* <a 
                 className={classes.button}
                 href="/catalogue" 
                 alt="Go to article and interview archive"
             >
                 {`Browse Articles \u2192`}
-            </a>
+            </a> */}
 
         </Layout>
     )

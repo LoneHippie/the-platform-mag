@@ -20,13 +20,13 @@ const Footer = ({ darkFooterBackground }) => {
                                 style={{color: darkFooterBackground ? '#EEEEEE' : '#2C2C2C'}}
                             >Home</a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a 
                                 href="/catalogue"
                                 alt="To article and interview archive page"
                                 style={{color: darkFooterBackground ? '#EEEEEE' : '#2C2C2C'}}
                             >Articles</a>
-                        </li>
+                        </li> */}
                         <li>
                             <a 
                                 href="/editions"

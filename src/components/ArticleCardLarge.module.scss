@@ -73,6 +73,19 @@
     color: $black-secondary;
 
     margin-bottom: 1.5rem;
+
+    max-height: 11.15rem;
+    overflow-y: hidden;
+
+    & > p > a {
+        text-decoration: none;
+        color: $black-secondary;
+        cursor: default;
+
+        &:hover {
+            cursor: default;
+        }
+    }
 }
 
 .cta_button {
