@@ -56,7 +56,7 @@ const ContactPage = () => {
 
                     </div>
 
-                    <ContactForm />
+                    <ContactForm formName={"contact page"} />
 
                 </section>
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import * as classes from './ContactForm.module.scss';
 
-const ContactForm = () => {
+const ContactForm = ({ formName }) => {
 
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
@@ -45,7 +45,7 @@ const ContactForm = () => {
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...formBody })
+            body: encode({ "form-name": formName || "contact", ...formBody })
         })
         .then(() => {
             alert(successMessageToUser);
@@ -58,7 +58,7 @@ const ContactForm = () => {
     return (
         <form 
             className={classes.form_container}
-            name="contact" 
+            name={ formName || "contact" } 
             method="POST" 
             onSubmit={(e) => handleSubmit(e)}
             data-netlify={true}
@@ -66,7 +66,7 @@ const ContactForm = () => {
         >
 
             {/* <input type="hidden" name="bot-field" /> */}
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value={ formName || "contact" } />
 
             <div className={classes.form_group}>
                 <input

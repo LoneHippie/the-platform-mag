@@ -48,7 +48,7 @@ const Footer = ({ darkFooterBackground }) => {
                 className={classes.copyright}
                 style={{color: darkFooterBackground ? '#EEEEEE' : '#2C2C2C'}}
             >
-                Platform Mag ©2021 By IDC Global Current Designed by Jordan Hlebechuk
+                Platform Mag ©{new Date().getFullYear()} By IDC Global Current Designed by Jordan Hlebechuk
             </section>
 
         </footer>
