@@ -71,3 +71,7 @@ yarn-error.log
 #unused pages
 /src/pages/catalogue.js
 /src/pages/catalogue.module.scss
+
+#to add later
+/src/templates/voices.js
+/src/templates/voices.module.scss
