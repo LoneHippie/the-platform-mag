@@ -45,7 +45,7 @@ const ContactForm = ({ formName }) => {
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": formName || "contact", ...formBody })
+            body: encode({ "form-name": formName, ...formBody })
         })
         .then(() => {
             alert(successMessageToUser);
@@ -58,7 +58,7 @@ const ContactForm = ({ formName }) => {
     return (
         <form 
             className={classes.form_container}
-            name={ formName || "contact" } 
+            name={ formName } 
             method="POST" 
             onSubmit={(e) => handleSubmit(e)}
             data-netlify={true}
@@ -66,7 +66,7 @@ const ContactForm = ({ formName }) => {
         >
 
             {/* <input type="hidden" name="bot-field" /> */}
-            <input type="hidden" name="form-name" value={ formName || "contact" } />
+            <input type="hidden" name="form-name" value={ formName } />
 
             <div className={classes.form_group}>
                 <input

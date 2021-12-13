@@ -110,7 +110,7 @@ const IndexPage = ({ data }) => {
 
 					</div>
 
-					<ContactForm />
+					<ContactForm formName="contact" />
 				</div>
 
 			</section>
