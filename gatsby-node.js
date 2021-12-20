@@ -4,6 +4,8 @@ exports.createPages = ({ graphql, actions }) => {
 
     const { createPage } = actions;
 
+    //add call in graphql for allContentfulVoicesInTheCrowd
+
     return graphql(
         `
         {
@@ -42,6 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const articleTemplate = path.resolve('./src/templates/article.js');
         const interviewTemplate = path.resolve('./src/templates/interview.js');
+        // const voicesTemplate = path.resolve('./src.templates/voices.js');
         const editionTemplate = path.resolve('./src/templates/edition.js');
 
         res.data.allContentfulArticle.edges.forEach(article => {
@@ -63,6 +66,16 @@ exports.createPages = ({ graphql, actions }) => {
                 }
             })
         });
+
+        // res.data.allContentfulVoicesInTheCrowd.forEach(voice => {
+        //     createPage({
+        //         path: `/${voice.node.isPartOfEdition ? voice.node.editionSlug : 'voices'}/${voice.node.slug}/`,
+        //         component: voicesTemplate,
+        //         context: {
+        //             slug: voice.node.slug
+        //         }
+        //     })
+        // });
 
         res.data.allContentfulEdition.edges.forEach(edition => {
             createPage({

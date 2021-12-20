@@ -16,22 +16,33 @@
     min-height: 70rem;
 
     @include respond(tablet) {
+        width: 95%;
+    }
+    @include respond(laptop) {
         width: 100%;
     }
 
     box-shadow: 4px 4px 12px 4px rgba($black-secondary, 0.4);
 
-    & > img {
-        height: 25rem;
-    }
-
     & > div {
-        height: 25rem;
+        height: 32rem;
         background-size: cover;
         background-position: center;
 
-        @include respond(laptop) {
+        @include respond(landscapePhone) {
+            height: 45rem;
+        }
+
+        @include respond(tablet) {
             height: 30rem;
+        }
+
+        @include respond(laptop) {
+            height: 32rem;
+        }
+
+        @include respond(desktop) {
+            height: 36rem;
         }
     }
 

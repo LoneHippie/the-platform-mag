@@ -3,6 +3,8 @@ import useOnScreen from './../hooks/useOnScreen';
 
 import * as classes from './TeamCard.module.scss';
 
+//TODO ::: Make cards less wide on desktop to avoid clipping images
+
 const TeamCard = ({ image, title, name, description }) => {
 
     const ref = useRef();

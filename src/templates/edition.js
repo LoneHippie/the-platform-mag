@@ -7,6 +7,7 @@ import PostContentLayout from './../components/PostContentLayout';
 
 import ArticleCardLarge from './../components/ArticleCardLarge';
 import InterviewCardLarge from './../components/InterviewCardLarge';
+import VoicesCardLarge from './../components/VoicesCardLarge';
 
 import * as classes from './edition.module.scss';
 
@@ -41,7 +42,19 @@ const Edition = ({ data }) => {
                 interview={el}
             />
         ))
-    }
+    };
+
+    // const generateVoicesCards = (voices) => {
+        
+    //     const editionVoices = voices.filter(el => !el.subtitle && !el.author);
+
+    //     return editionVoices.map((el, index) => (
+    //         <VoicesCardLarge 
+    //             key={`voices-card-large-${index}`}
+    //             voice={el}
+    //         />
+    //     ))
+    // };
 
     return (
         <Layout darkNavIcons={false} darkFooterBackground={true}>
@@ -79,6 +92,10 @@ const Edition = ({ data }) => {
 
                     { generateInterviewCards(data.edition.editionPosts) }
 
+                    {/* <h3>Voices In The Crowd</h3>
+
+                    { generateVoicesCards(data.edition.editionPosts) } */}
+
                 </section>
 
                 <section className={classes.quote_section}>
@@ -97,6 +114,7 @@ const Edition = ({ data }) => {
 
 export default Edition;
 
+//add ...on allContentfulVoicesInTheCrowd
 export const pageQuery = graphql`
     query($slug: String!) {
         edition: contentfulEdition(slug: {eq: $slug}) {
