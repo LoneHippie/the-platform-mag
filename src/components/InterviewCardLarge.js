@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import useOnScreen from './../hooks/useOnScreen';
 import showdown from 'showdown';
 
+import ShareButton from './ShareButton';
+
 import * as classes from './InterviewCardLarge.module.scss';
 
 const InterviewCardLarge = ({ interview }) => {
@@ -36,13 +38,19 @@ const InterviewCardLarge = ({ interview }) => {
                 className={classes.preview_text}
                 dangerouslySetInnerHTML={{ __html: formattedText() }}
             />
-            <a
-                href={interview.isPartOfEdition ? `/${interview.editionSlug}/${interview.slug}` : `/interview/${interview.slug}`}
-                alt={'Read the full interview here'}
-                className={classes.cta_button}
-            >
-                Read Full
-            </a>
+            <div className={classes.cta_container}>
+                <a
+                    href={interview.isPartOfEdition ? `/${interview.editionSlug}/${interview.slug}` : `/interview/${interview.slug}`}
+                    alt={'Read the full interview here'}
+                    className={classes.cta_button}
+                >
+                    Read Full
+                </a>
+                <ShareButton 
+                    darkIcon={true}
+                    link={`https://www.theplatformmag.com/${interview.editionSlug}/${interview.slug}`}
+                />
+            </div>
         </article>
     )
 };

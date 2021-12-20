@@ -5,6 +5,8 @@ import Layout from './../components/Layout';
 import Seo from './../components/Seo';
 import PostContentLayout from './../components/PostContentLayout';
 
+import ShareButton from '../components/ShareButton';
+
 import ArticleCardLarge from './../components/ArticleCardLarge';
 import InterviewCardLarge from './../components/InterviewCardLarge';
 import VoicesCardLarge from './../components/VoicesCardLarge';
@@ -68,11 +70,17 @@ const Edition = ({ data }) => {
                 className={classes.header}
                 style={{backgroundImage: editionCover}}
             >
-
 				<div className={classes.header_title}>
 					<h1>{data.edition.editionTitle}</h1>
 					<h2>{`Platform ${data.edition.slug.replaceAll(/-/g, ' ')}`}</h2>
 				</div>
+
+                <div className={classes.header_share}>
+                    <ShareButton 
+                        darkIcon={false}
+                        link={`https://www.theplatformmag.com/${data.edition.slug}`}
+                    />
+                </div>
 
 			</header>
 

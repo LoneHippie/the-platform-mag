@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import useOnScreen from './../hooks/useOnScreen';
 import showdown from 'showdown';
 
+import ShareButton from './ShareButton';
+
 import Placeholder from './../images/author_placeholder.svg';
 
 import * as classes from './ArticleCardLarge.module.scss';
@@ -50,13 +52,21 @@ const ArticleCardLarge = ({ article }) => {
                 className={classes.preview_text} 
                 dangerouslySetInnerHTML={{ __html: formattedText() }}
             />
-            <a
-                href={article.isPartOfEdition ? `/${article.editionSlug}/${article.slug}` : `/article/${article.slug}`}
-                alt={'Read the full article here'}
-                className={classes.cta_button}
-            >
-                Read Full
-            </a>
+            
+            <div className={classes.cta_container}>
+                <a
+                    href={article.isPartOfEdition ? `/${article.editionSlug}/${article.slug}` : `/article/${article.slug}`}
+                    alt={'Read the full article here'}
+                    className={classes.cta_button}
+                >
+                    Read Full
+                </a>
+                <ShareButton 
+                    darkIcon={true}
+                    link={`https://www.theplatformmag.com/${article.editionSlug}/${article.slug}`}
+                />
+            </div>
+
         </article>
     )
 };
