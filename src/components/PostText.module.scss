@@ -15,5 +15,9 @@
             color: $black-primary;
             text-decoration: underline;
         }
+
+        & > a {
+            color: #0074cc;
+        }
     }
 }

@@ -90,6 +90,8 @@
             @include respond(landscapePhone) {
                 margin-bottom: 0;
             }
+
+            background: rgba($black-secondary, 0.4);
         }
     }
 
@@ -120,8 +122,9 @@
 
     & > a {
         @include buttonSolid($black-primary);
-        font-size: 2.6rem !important;
+        font-size: 2.8rem !important;
         margin-bottom: 1rem;
+        padding: 1.5rem 3rem !important;
 
         @include respond(landscapePhone) {
             margin-left: 1.5rem;

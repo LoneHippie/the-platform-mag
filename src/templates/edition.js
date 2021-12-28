@@ -9,7 +9,7 @@ import ShareButton from '../components/ShareButton';
 
 import ArticleCardLarge from './../components/ArticleCardLarge';
 import InterviewCardLarge from './../components/InterviewCardLarge';
-import VoicesCardLarge from './../components/VoicesCardLarge';
+// import VoicesCardLarge from './../components/VoicesCardLarge';
 
 import * as classes from './edition.module.scss';
 
@@ -86,11 +86,6 @@ const Edition = ({ data }) => {
 
             <PostContentLayout includeRecentEditionsBar={false}>
 
-                <section className={classes.notes_section}>
-                    <h3>Editor's Note</h3>
-                    <p>{data.edition.editorsNote.editorsNote}</p>
-                </section>
-
                 <section className={classes.stories_section}>
                     <h3>Key Stories</h3>
 
@@ -112,6 +107,11 @@ const Edition = ({ data }) => {
                     <p><i>{data.edition.editionQuote}</i></p>
 
                     <strong>{`- ${data.edition.editionQuoteSource}`}</strong>
+                </section>
+
+                <section className={classes.notes_section}>
+                    <h3>Editor's Note</h3>
+                    <p>{data.edition.editorsNote.editorsNote}</p>
                 </section>
 
             </PostContentLayout>

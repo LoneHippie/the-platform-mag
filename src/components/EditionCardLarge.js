@@ -60,7 +60,7 @@ const EditionCardLarge = ({ edition, isLatest, isFeatured }) => {
                         href={`/${edition.slug}`}
                         alt="To latest full Platform Edition"
                     >
-                        Full Edition
+                        Read Full Edition
                     </a>
                 </div>
 
