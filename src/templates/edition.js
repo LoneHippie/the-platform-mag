@@ -34,6 +34,8 @@ const Edition = ({ data }) => {
         ))
     };
 
+    const hasInterviews = data.edition.editionPosts.some(el => el.subtitle);
+
     const generateInterviewCards = (interviews) => {
 
         const editionInterviews = interviews.filter(el => el.subtitle);
@@ -91,9 +93,15 @@ const Edition = ({ data }) => {
 
                     { generateArticleCards(data.edition.editionPosts) }
 
-                    <h3>Featured Interview</h3>
+                    {
+                        hasInterviews ? (
+                            <>
+                                <h3>Featured Interview</h3>
 
-                    { generateInterviewCards(data.edition.editionPosts) }
+                                { generateInterviewCards(data.edition.editionPosts) }
+                            </>
+                        ) : null
+                    }
 
                     {/* <h3>Voices In The Crowd</h3>
 
