@@ -9,7 +9,7 @@ import ShareButton from '../components/ShareButton';
 
 import ArticleCardLarge from './../components/ArticleCardLarge';
 import InterviewCardLarge from './../components/InterviewCardLarge';
-// import VoicesCardLarge from './../components/VoicesCardLarge';
+import VoicesCardLarge from './../components/VoicesCardLarge';
 
 import * as classes from './edition.module.scss';
 
@@ -24,7 +24,7 @@ const Edition = ({ data }) => {
 
     const generateArticleCards = (articles) => {
 
-        const editionArticles = articles.filter(el => !el.subtitle);
+        const editionArticles = articles.filter(el => !el.subtitle && el.author);
 
         return editionArticles.map((el, index) => (
             <ArticleCardLarge 
@@ -48,17 +48,19 @@ const Edition = ({ data }) => {
         ))
     };
 
-    // const generateVoicesCards = (voices) => {
-        
-    //     const editionVoices = voices.filter(el => !el.subtitle && !el.author);
+    const hasVoices = data.edition.editionPosts.some(el => !el.subtitle && !el.author);
 
-    //     return editionVoices.map((el, index) => (
-    //         <VoicesCardLarge 
-    //             key={`voices-card-large-${index}`}
-    //             voice={el}
-    //         />
-    //     ))
-    // };
+    const generateVoicesCards = (voices) => {
+        
+        const editionVoices = voices.filter(el => !el.subtitle && !el.author);
+
+        return editionVoices.map((el, index) => (
+            <VoicesCardLarge 
+                key={`voices-card-large-${index}`}
+                voice={el}
+            />
+        ))
+    };
 
     return (
         <Layout darkNavIcons={false} darkFooterBackground={true}>
@@ -103,9 +105,15 @@ const Edition = ({ data }) => {
                         ) : null
                     }
 
-                    {/* <h3>Voices In The Crowd</h3>
+                    {
+                        hasVoices ? (
+                            <>
+                                <h3>Voices In The Crowd</h3>
 
-                    { generateVoicesCards(data.edition.editionPosts) } */}
+                                { generateVoicesCards(data.edition.editionPosts) }
+                            </>
+                        ) : null
+                    }
 
                 </section>
 
@@ -130,7 +138,6 @@ const Edition = ({ data }) => {
 
 export default Edition;
 
-//add ...on allContentfulVoicesInTheCrowd
 export const pageQuery = graphql`
     query($slug: String!) {
         edition: contentfulEdition(slug: {eq: $slug}) {
@@ -184,6 +191,24 @@ export const pageQuery = graphql`
                     }
                     isPartOfEdition
                     editionSlug
+                    text {
+                        text
+                    }
+                }
+                ... on ContentfulVoicesInTheCrowd {
+                    slug
+                    title
+                    coverImage {
+                        description
+                        file {
+                            url
+                        }
+                    }
+                    isPartOfEdition
+                    editionSlug
+                    introduction {
+                        introduction
+                    }
                     text {
                         text
                     }
