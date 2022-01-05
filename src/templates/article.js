@@ -13,8 +13,6 @@ import * as classes from './article.module.scss';
 
 const Article = ({ data }) => {
 
-    console.log(data.article.text)
-
     return (
         <Layout darkNavIcons={true} darkFooterBackground={true}>
             <Seo 
