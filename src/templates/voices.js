@@ -79,7 +79,7 @@ export const pageQuery = graphql`
             isPartOfEdition
             editionSlug
         }
-        editions: allContentfulEdition {
+        editions: allContentfulEdition(filter: {node_locale: {eq: "en-US"}}) {
             edges {
                 node {
                   coverImage {
