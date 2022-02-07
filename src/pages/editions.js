@@ -51,7 +51,7 @@ export default EditionsPage;
 
 export const pageQuery = graphql`
     query {
-        editions: allContentfulEdition(sort: {fields: editionNumber}) {
+        editions: allContentfulEdition(sort: {fields: editionNumber}, filter: {node_locale: {eq: "en-US"}}) {
             edges {
                 node {
                     editionTitle

@@ -123,7 +123,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
 	query {
-		edition: allContentfulEdition(sort: {fields: editionNumber, order: DESC}) {
+		edition: allContentfulEdition(sort: {fields: editionNumber, order: DESC}, filter: {node_locale: {eq: "en-US"}}) {
 			edges {
 				node {
 					editionTitle
@@ -140,7 +140,7 @@ export const pageQuery = graphql`
 				}
 			}
 		}
-		team: allContentfulTeamMember(sort: {fields: createdAt}) {
+		team: allContentfulTeamMember(sort: {fields: createdAt}, filter: {node_locale: {eq: "en-US"}}) {
 			edges {
 			  	node {
 					name
