@@ -1,9 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from './../components/Layout';
-import Seo from './../components/Seo';
-import EditionCardLarge from './../components/EditionCardLarge';
+import { Layout, Seo, EditionCardLarge } from '../components';
 
 import * as classes from './editions.module.scss';
 

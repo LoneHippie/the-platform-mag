@@ -1,11 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from './../components/Layout';
-import Seo from './../components/Seo';
-import EditionCardLarge from './../components/EditionCardLarge';
-import TeamCard from './../components/TeamCard';
-import ContactForm from './../components/ContactForm';
+import { Layout, Seo, EditionCardLarge, TeamCard, ContactForm } from '../components';
 
 import IconFB from './../images/icon-facebook.svg';
 import IconInsta from './../images/icon-insta.svg';

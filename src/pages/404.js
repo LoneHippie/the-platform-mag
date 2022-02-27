@@ -1,8 +1,5 @@
 import * as React from "react"
-
-import Layout from './../components/Layout';
-import Seo from './../components/Seo';
-import PostContentLayout from "../components/PostContentLayout";
+import { Layout, Seo, PostContentLayout } from "../components";
 
 import * as classes from './404.module.scss';
 

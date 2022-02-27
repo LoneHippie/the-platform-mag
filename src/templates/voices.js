@@ -1,11 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from './../components/Layout';
-import PostContentLayout from './../components/PostContentLayout';
-import Seo from './../components/Seo';
-import PostText from './../components/PostText';
-import RecentEditionsBar from './../components/RecentEditionsBar';
+import { PostContentLayout, Seo, PostText, RecentEditionsBar, Layout } from '../components';
 
 import * as classes from './voices.module.scss';
 

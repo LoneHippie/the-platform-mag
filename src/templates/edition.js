@@ -1,15 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from './../components/Layout';
-import Seo from './../components/Seo';
-import PostContentLayout from './../components/PostContentLayout';
-
-import ShareButton from '../components/ShareButton';
-
-import ArticleCardLarge from './../components/ArticleCardLarge';
-import InterviewCardLarge from './../components/InterviewCardLarge';
-import VoicesCardLarge from './../components/VoicesCardLarge';
+import { Layout, Seo, PostContentLayout, ShareButton, ArticleCardLarge, InterviewCardLarge, VoicesCardLarge } from '../components';
 
 import * as classes from './edition.module.scss';
 
