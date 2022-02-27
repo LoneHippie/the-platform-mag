@@ -1,10 +1,5 @@
 import React from 'react';
-
-import Layout from './../components/Layout';
-import Seo from './../components/Seo';
-
-import PostContentLayout from './../components/PostContentLayout';
-import ContactForm from './../components/ContactForm';
+import { Layout, Seo, PostContentLayout, ContactForm } from '../components';
 
 import IconFB from './../images/icon-facebook.svg';
 import IconInsta from './../images/icon-insta.svg';
