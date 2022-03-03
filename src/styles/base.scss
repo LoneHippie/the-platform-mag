@@ -10,16 +10,28 @@
 }
 
 html {
+    // font-size: 62.5%;
+
+    // @include respond(tablet) {
+    //     font-size: 70%;
+    // }
+    // @include respond(laptop) {
+    //     font-size: 75%;
+    // }
+    // @include respond(desktop) {
+    //     font-size: 78%;
+    // }
+
     font-size: 62.5%;
 
     @include respond(tablet) {
-        font-size: 70%;
+        font-size: 65%;
     }
     @include respond(laptop) {
-        font-size: 75%;
+        font-size: 68.5%;
     }
     @include respond(desktop) {
-        font-size: 78%;
+        font-size: 71.5%;
     }
 
     scroll-behavior: smooth;

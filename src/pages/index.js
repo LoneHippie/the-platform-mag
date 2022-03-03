@@ -44,17 +44,23 @@ const IndexPage = ({ data }) => {
 
 				<h3>Editorial Standards</h3>
 
-				<p>Platform magazine stands with the 1st Amendment and encouraging free informative debate, not only legally but culturally as well.</p>
+				<p>Platform magazine stands with the 1st Amendment and encourages free informative debate, not only as a legal value but as a cultural one as well. For example, a society can make political speech taboo through social repercussions, such as getting a person fired from a job or ensuring the person is de-facto excommunicated. Platform was created to give a platform to both sides of the political aisle.</p>
 
 				<p>Plagiarism or the knowing provision of demonstrably false information will obviously not be published.</p>
 
-				<p>Quotes or terms in articles, will usually have a hyperlink to source them to another news article, so readers can learn more about these terms and quotes.</p>
+				<p>Quotes and statistics cited in articles need to be  hyperlinked to their relevant source. We would also recommend hyperlinking novel or technical terms to a source so that readers can learn more about these terms. References to newsworthy events can also be hyperlinked.</p>
 
-				<p><strong>Writing standards:</strong> Platform looks for well-structured and insightful articles. We welcome both progressive and conservative narratives and ideas and there is no requirement or expectation for our articles to be unbiased, unlike our decision to publish an article, which is based solely on the quality of the writing and the assumption that there will be none of the mentioned violations (such as hate speech, etc).</p>
+				<p><strong>Writing standards:</strong> Platform looks for well-structured, timely, and insightful articles that fit within our 800-4,000 word limit. We welcome both progressive and conservative narratives and ideas and there is no requirement or expectation for our articles to be unbiased, unlike our decision to publish an article, which is based solely on the quality of the writing, and the assumption that there will be none of the mentioned violations (such as hate speech, etc).As such, we would note that no article necessarily speaks for the Platform as an organization.</p>
+
+				<p>In the case where we receive multiple articles on one topic that are more or less uniform in their view, we may reject all articles but one. In order to check whether the subject of your article has already been covered by someone else, please reach out to the Editor in Chief and let us know the topic you are thinking of writing.</p>
+
+				<p>Writing quality is determined by the grammar, syntax, and flow of the article itself. The article must also engage on or connect to an ongoing or recent political issue in a clear and concise way. Articles can deal with local issues but they need to connect to a larger national or global picture of events or debate. For instance, if you are writing about local fishery practices in Cornwall, you can connect it to general practices in the European Union, how fisheries are important to a global economy, and the like.</p>
+
+				<p>As we aim to publish an edition at the end of every month, articles should be submitted for review at least two weeks prior to the end of the month. <b>Please submit your article (or inquire about whether an article topic has been covered) to contacttheplatformmag@gmail.com.</b></p>
 
 				<p><strong>Hate Speech:</strong> any call for the dehumanization of one people over another on the basis of immutable characteristics and/or any call to do violence to said community.</p>
 
-				<p>To combat misinformation, we will encourage the public to give us feedback on the article and if corrections are needed, to state their case.</p>
+				<p>To combat the publication of demonstrably false or the relevancy of information based on the source in question provided, we will encourage the public to give us feedback on the article and if corrections are needed, to state their case.</p>
 
 			</section>
 
