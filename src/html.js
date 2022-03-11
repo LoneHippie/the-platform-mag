@@ -11,7 +11,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script data-ad-client="ca-pub-9635992687233706" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9635992687233706"
+     crossorigin="anonymous"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
