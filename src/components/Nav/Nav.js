@@ -39,14 +39,6 @@ const Nav = ({ darkNavIcons }) => {
                                 Home
                             </a>
                         </li>
-                        {/* <li className={classes.nav_btn__item}>
-                            <a
-                                className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
-                                href="/catalogue"
-                            >
-                                Catalogue
-                            </a>
-                        </li> */}
                         <li className={classes.nav_btn__item}>
                             <a
                                 className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
@@ -61,6 +53,30 @@ const Nav = ({ darkNavIcons }) => {
                                 href="/contact"
                             >
                                 Contact
+                            </a>
+                        </li>
+                        <li className={classes.nav_btn__item}>
+                            <a
+                                className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
+                                href="/our-team"
+                            >
+                                Our Team
+                            </a>
+                        </li>
+                        <li className={classes.nav_btn__item}>
+                            <a
+                                className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
+                                href="/editorial-standards"
+                            >
+                                Editorial Standards
+                            </a>
+                        </li>
+                        <li className={classes.nav_btn__item}>
+                            <a
+                                className={darkNavIcons ? classes.nav_btn__link__dark : classes.nav_btn__link}
+                                href="/mission-statement"
+                            >
+                                Mission Statement
                             </a>
                         </li>
                     </ul>
