@@ -1,0 +1,30 @@
+@import "../styles/media_queries";
+@import "../styles/variables";
+
+.header {
+    position: relative;
+    margin-bottom: 6rem;
+    text-align: center;
+
+    font-size: 3.2rem;
+    text-decoration: underline;
+}
+
+.team_grid {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 4rem;
+
+    @include respond(tablet) {
+        grid-template-columns: repeat(2, auto);
+    }
+    @include respond(laptop) {
+        grid-gap: 2rem;
+        grid-template-columns: repeat(3, auto);
+    }
+    @include respond(desktop) {
+        grid-gap: 3rem;
+    }
+    
+    margin-bottom: 8rem;
+}
