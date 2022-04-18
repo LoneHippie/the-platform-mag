@@ -12,7 +12,7 @@ const VoicesCardLarge = ({ voice }) => {
     const formattedText = () => {
         let converter = new showdown.Converter();
         let HTML = converter.makeHtml(voice.introduction.introduction);
-        return HTML;
+        return HTML.slice(0, 160).trim().replace(/<p>/g, '') + '...';
     };
 
     return (

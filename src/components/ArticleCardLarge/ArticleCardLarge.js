@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useOnScreen } from '../../hooks';
 import showdown from 'showdown';
 
@@ -18,6 +18,16 @@ const ArticleCardLarge = ({ article }) => {
         let HTML = converter.makeHtml(article.text.text);
         return HTML;
     };
+
+    const textRef = useRef();
+
+    useEffect(() => {
+        if (textRef.current) {
+            while(textRef.current.childNodes.length > 1) {
+                textRef.current.removeChild(textRef.current.lastChild)
+            }
+        }
+    }, [textRef])
 
     return (
         <article 
@@ -49,6 +59,7 @@ const ArticleCardLarge = ({ article }) => {
                 </div>
             </div>
             <div 
+                ref={textRef}
                 className={classes.preview_text} 
                 dangerouslySetInnerHTML={{ __html: formattedText() }}
             />

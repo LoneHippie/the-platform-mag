@@ -1,15 +1,5 @@
 import { useEffect, useState } from 'react';
 
-// const listObserver = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (!entry.isIntersecting) { return };
-//         setInView(true);
-//         observer.unobserve(entry.target);
-//     });
-// }, { root: null, rootMargin: '-10px' });
-
-// listObserver.observe(itemRef.current);
-
 function runtimeObserver(stateArg) {
     let rto;
 
@@ -41,34 +31,3 @@ export default function useOnScreen(ref) {
 
     return isIntersecting;
 };
-
-// function itemObserver(setInView) {
-//     let observer = null;
-
-//     if (typeof window !== 'undefined') {
-//         observer = new IntersectionObserver((entries, observer) => {
-//             entries.forEach(entry => {
-//                 if (!entry.isIntersecting) { return };
-//                 console.log(entry.target);
-//                 setInView(true);
-//                 observer.unobserve(entry.target);
-//             }, { root: null, rootMargin: '-10px' });
-//         })
-//     };
-
-//     return observer;
-// };
-
-// export default function useObserver(target, setInView) {
-
-//     useEffect(() => {
-//         let observer;
-
-//         if (itemObserver(setInView)) {
-//             observer = itemObserver(setInView);
-//             observer.observe(target);
-//         }
-
-//     }, [])
-
-// };

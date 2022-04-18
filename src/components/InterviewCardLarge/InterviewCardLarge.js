@@ -34,7 +34,7 @@ const InterviewCardLarge = ({ interview }) => {
             />
             <h4 className={classes.title}>{interview.title}</h4>
             <h5 className={classes.subtitle}>{interview.subtitle}</h5>
-            <p 
+            <div
                 className={classes.preview_text}
                 dangerouslySetInnerHTML={{ __html: formattedText() }}
             />
