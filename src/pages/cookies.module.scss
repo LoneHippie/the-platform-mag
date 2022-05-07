@@ -1,0 +1,21 @@
+@import "../styles/media_queries";
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.header {
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+
+    & > h1 {
+        text-align: center;
+    }
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
