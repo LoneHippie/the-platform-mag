@@ -1,16 +1,19 @@
 import React from 'react'
+import { useState } from 'react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 
 const CookieBanner = ({darkFooterBackground}) => {
 
-    const hasUserInteractedWithBanner = () => {
+    const [ bannerFlag, setBannerFlag ] = useState(false);
+
+    useState(() => {
         const cookiesList = Cookies.get();
-        const consentCookie = cookiesList['gatsby-gdpr-google-analytics']
-        return consentCookie !== undefined && consentCookie !== null;
-    }
+        const consentCookie = cookiesList.hasOwnProperty('gatsby-gdpr-google-analytics')
+        setBannerFlag(consentCookie);
+    }, []);
 
     return (
-        !hasUserInteractedWithBanner() && (
+        !bannerFlag && (
             <CookieConsent 
                 location='bottom'
                 buttonText={"Accept All"}
