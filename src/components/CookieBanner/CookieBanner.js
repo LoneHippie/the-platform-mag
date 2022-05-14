@@ -13,7 +13,7 @@ const CookieBanner = ({darkFooterBackground}) => {
             const consentCookie = cookiesList.hasOwnProperty('gatsby-gdpr-google-analytics')
             setBannerFlag(consentCookie);
         }
-    }, [window]);
+    }, []);
 
     return (
         !bannerFlag && (
