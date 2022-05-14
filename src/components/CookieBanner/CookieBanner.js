@@ -7,10 +7,13 @@ const CookieBanner = ({darkFooterBackground}) => {
     const [ bannerFlag, setBannerFlag ] = useState(false);
 
     useState(() => {
-        const cookiesList = Cookies.get();
-        const consentCookie = cookiesList.hasOwnProperty('gatsby-gdpr-google-analytics')
-        setBannerFlag(consentCookie);
-    }, []);
+        //for checking if window is defined during node build process
+        if (typeof window !== 'undefined') {
+            const cookiesList = Cookies.get();
+            const consentCookie = cookiesList.hasOwnProperty('gatsby-gdpr-google-analytics')
+            setBannerFlag(consentCookie);
+        }
+    }, [window]);
 
     return (
         !bannerFlag && (
