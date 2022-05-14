@@ -6,6 +6,15 @@ const CookieBanner = ({darkFooterBackground}) => {
 
     const [ bannerFlag, setBannerFlag ] = useState(false);
 
+    const handleRemoveCookies = () => {
+        //for checking if window is defined during node build process
+        if (typeof window !== 'undefined') {
+            Cookies.remove("_ga");
+            Cookies.remove("_gat");
+            Cookies.remove("_gid");
+        }
+    }
+
     useState(() => {
         //for checking if window is defined during node build process
         if (typeof window !== 'undefined') {
@@ -21,6 +30,7 @@ const CookieBanner = ({darkFooterBackground}) => {
                 location='bottom'
                 buttonText={"Accept All"}
                 declineButtonText={"Accept Necessary"}
+                onDecline={handleRemoveCookies}
                 enableDeclineButton={true}
                 cookieName="gatsby-gdpr-google-analytics"
                 expires={150}
