@@ -31,6 +31,16 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GA_TRACKING_ID,
+          anonymize: true
+        },
+        environments: ["production"]
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
