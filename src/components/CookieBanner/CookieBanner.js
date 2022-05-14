@@ -20,7 +20,7 @@ const CookieBanner = ({darkFooterBackground}) => {
             <CookieConsent 
                 location='bottom'
                 buttonText={"Accept All"}
-                declineButtonText={"Accept necessary"}
+                declineButtonText={"Accept Necessary"}
                 enableDeclineButton={true}
                 cookieName="gatsby-gdpr-google-analytics"
                 expires={150}
@@ -44,9 +44,11 @@ const CookieBanner = ({darkFooterBackground}) => {
                     borderRadius: "8px",
                     backgroundColor: "#026bbb"
                 }}
+                overlay={true}
+                acceptOnOverlayClick={true}
             >
                 We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for other purposes as specified in the <a href="/cookies" style={{color: "#026bbb"}}>cookie policy</a>.
-                You can consent to the use of such technologies by using the “Accept” button. By closing this notice, you continue without accepting.
+                You can consent to the use of such technologies by using the “Accept All” button. By closing this notice, you continue without accepting.
             </CookieConsent>
         )
     )
