@@ -6,8 +6,11 @@ import IconFB from './../images/icon-facebook.svg';
 import IconInsta from './../images/icon-insta.svg';
 
 import * as classes from './index.module.scss';
+import VideoCardLarge from '../components/VideoCardLarge/VideoCardLarge';
 
 const IndexPage = ({ data }) => {
+
+	const featuredVideo = data.video.edges.find(el => el.node.isFeaturedVideo);
 
 	return (
 		<Layout darkNavIcons={false} darkFooterBackground={false}>
@@ -26,6 +29,10 @@ const IndexPage = ({ data }) => {
 				edition={data.edition.edges[0].node}
 				isFeatured={true}
 				isLatest={true}
+			/>
+
+			<VideoCardLarge 
+				video={featuredVideo.node}
 			/>
 
 			<section className={classes.contact_section}>
@@ -80,6 +87,19 @@ export const pageQuery = graphql`
 						editionSummary
 					}
 					slug
+				}
+			}
+		}
+		video: allContentfulStories(sort: {fields: createdAt, order: ASC}, filter: {node_locale: {eq: "en-US"}}) {
+			edges {
+				node {
+					youtubeUrl
+					title
+					postDate(formatString: "DD MM YYYY")
+					postText {
+						postText
+					}
+					isFeaturedVideo
 				}
 			}
 		}

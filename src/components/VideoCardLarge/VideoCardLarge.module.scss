@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    height: 60rem;
+
+    @include respond(tablet) {
+        width: 80%;
+    }
+
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    padding-top: 1.5rem;
+    border-top: 3.5px solid $black-primary;
+    border-bottom: 3.5px solid $black-primary;
+
+    z-index: 600;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: $black-secondary;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
