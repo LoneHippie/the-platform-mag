@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useOnScreen } from '../../hooks';
 import showdown from 'showdown';
 
@@ -14,18 +14,27 @@ const InterviewCardLarge = ({ interview }) => {
     const formattedText = () => {
         let converter = new showdown.Converter();
         let HTML = converter.makeHtml(interview.text.text);
-        return HTML.slice(0, 160).trim().replace(/<p>/g, '') + '...';
+        return HTML;
     };
+
+    const textRef = useRef();
+
+    useEffect(() => {
+        if (textRef.current) {
+            while(textRef.current.childNodes.length > 1) {
+                textRef.current.removeChild(textRef.current.lastChild)
+            }
+        }
+    }, [textRef])
 
     return (
         <article 
-            className={classes.card}
+            className={classes.card} ref={ref}
             style={{
                 opacity: inView ? '1' : '0',
                 transform: inView ? 'translateX(0)' : 'translateX(-15rem)',
                 transition: 'all 650ms' 
             }}
-            ref={ref}
         >
             <img 
                 className={classes.cover}
@@ -34,8 +43,9 @@ const InterviewCardLarge = ({ interview }) => {
             />
             <h4 className={classes.title}>{interview.title}</h4>
             <h5 className={classes.subtitle}>{interview.subtitle}</h5>
-            <div
-                className={classes.preview_text}
+            <div 
+                ref={textRef}
+                className={classes.preview_text} 
                 dangerouslySetInnerHTML={{ __html: formattedText() }}
             />
             <div className={classes.cta_container}>
