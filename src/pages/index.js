@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
 						<h3>Get In Touch</h3>
 
 						<div>
-							<a href="https://facebook.com/ThePlatformMagazine/">
+							<a href="https://www.facebook.com/people/Platform-mag/100070326180563/">
 								<img 
 									alt="Go check out our Facebook page"
 									src={IconFB}

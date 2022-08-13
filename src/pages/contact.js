@@ -35,7 +35,7 @@ const ContactPage = () => {
                         <h2>Contact Us</h2>
 
                         <div>
-                            <a href="https://facebook.com/ThePlatformMagazine/">
+                            <a href="https://www.facebook.com/people/Platform-mag/100070326180563/">
                                 <img 
                                     alt="Go check out our Facebook page"
                                     src={IconFB}
