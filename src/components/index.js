@@ -13,6 +13,8 @@ import Seo from "./Seo";
 import ShareButton from "./ShareButton";
 import TeamCard from "./TeamCard";
 import VoicesCardLarge from "./VoicesCardLarge";
+import VideoCardLarge from "./VideoCardLarge";
+import VideoCardStandard from "./VideoCardStandard";
 
 export {
     ArticleCardLarge,
@@ -29,5 +31,7 @@ export {
     Seo,
     ShareButton,
     TeamCard,
-    VoicesCardLarge
+    VoicesCardLarge,
+    VideoCardLarge,
+    VideoCardStandard
 }

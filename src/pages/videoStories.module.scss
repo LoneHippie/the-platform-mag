@@ -1,0 +1,31 @@
+@import "../styles/media_queries";
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.header {
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
+
+    & > h1 {
+        text-align: center;
+    }
+}
+
+.stories_section {
+    margin-bottom: 6rem;
+
+    &_category {
+        margin-bottom: 10rem;
+        @include respond(landscapePhone) {
+            margin-bottom: 6rem;
+        }
+
+        & > h2 {
+            text-transform: uppercase;
+            border-bottom: 3.5px solid $black-primary;
+            padding-bottom: 8px;
+        }
+    }
+}
+
