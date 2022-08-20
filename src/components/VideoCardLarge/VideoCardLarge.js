@@ -7,15 +7,16 @@ const VideoCardLarge = ({video}) => {
   return (
     <article className={classes.card}>
         <strong className={classes.title}>{video.title}</strong>
-        <iframe 
-            className={classes.player}
-            title="Youtube embedded player for official Platform Mag video article"
-            height='100%' width='100%' 
-            frameBorder="false" 
-            allow="encrypted-media; gyroscope;" 
-            allowFullScreen 
-            src={video.youtubeUrl} 
-        />
+        <div className={classes.player}>
+          <iframe 
+              className={classes.player_video}
+              title="Youtube embedded player for official Platform Mag video article" 
+              frameBorder="false" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen 
+              src={video.youtubeUrl} 
+          />
+          </div>
         <p className={classes.description}>{video.postText.postText}</p>
 
         <div className={classes.cta_section}>

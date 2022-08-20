@@ -25,10 +25,19 @@
 }
 
 .player {
+    position: relative;
     height: 30rem;
 
     @include respond(tablet) {
         height: 45rem;
+    }
+
+    &_video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 
