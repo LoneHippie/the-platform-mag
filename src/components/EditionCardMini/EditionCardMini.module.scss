@@ -3,64 +3,64 @@
 @import "../../styles/mixins";
 
 .card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin-right: 1rem;
-    @include respond(laptop) {
-        margin-right: 0;
-        margin-bottom: 2rem;
+  margin-right: 1rem;
+  @include respond(laptop) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  &_edition {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+  }
+
+  &_body {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    height: 13rem;
+    width: 13rem;
+
+    @include respond(largePhone) {
+      height: 14.5rem;
+      width: 14.5rem;
+    }
+    @include respond(landscapePhone) {
+      height: 17rem;
+      width: 17rem;
+      font-size: 2.1rem;
     }
 
-    &_edition {
-        font-size: 1.8rem;
-        text-align: left;
-        margin-bottom: 0.25rem;
-        text-transform: capitalize;
+    &:hover {
+      cursor: pointer;
     }
 
-    &_body {
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat;
-        height: 13rem;
-        width: 13rem;
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        @include respond(largePhone) {
-            height: 14.5rem;
-            width: 14.5rem;
-        }
-        @include respond(landscapePhone) {
-            height: 17rem;
-            width: 17rem;
-            font-size: 2.1rem;
-        }
+      height: 100%;
+      width: 100%;
 
-        &:hover {
-            cursor: pointer;
-        }
-
-        & > a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            height: 100%;
-            width: 100%;
-
-            text-decoration: none;
-            font-size: 1.9rem;
-            font-family: $font-head;
-            font-weight: 600;
-            text-align: center;
-            color: $white-primary;
-        }
+      text-decoration: none;
+      font-size: 1.9rem;
+      font-family: $font-head;
+      font-weight: 600;
+      text-align: center;
+      color: $white-primary;
     }
+  }
 
-    &_date {
-        font-size: 1.8rem;
-        text-align: right;
-        margin-top: 0.25rem;
-        text-transform: capitalize;
-    }
+  &_date {
+    font-size: 1.8rem;
+    text-align: right;
+    margin-top: 0.25rem;
+    text-transform: capitalize;
+  }
 }

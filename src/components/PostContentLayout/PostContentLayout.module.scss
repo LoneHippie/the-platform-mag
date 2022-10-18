@@ -2,32 +2,32 @@
 @import "../../styles/media_queries";
 
 .layout {
-    margin: 0 5%;
-    margin-top: 8rem;
+  margin: 0 5%;
+  margin-top: 8rem;
 
-    @include respond (landscapePhone) {
-        margin: 0 7.5%;
-        margin-top: 8rem;
-    }
-    @include respond(tablet) {
-        margin: 0 10%;
-        margin-top: 8rem;
-    }
-    @include respond(laptop) {
-        margin: 0 15%;
-        margin-top: 8rem;
-    }
+  @include respond(landscapePhone) {
+    margin: 0 7.5%;
+    margin-top: 8rem;
+  }
+  @include respond(tablet) {
+    margin: 0 10%;
+    margin-top: 8rem;
+  }
+  @include respond(laptop) {
+    margin: 0 15%;
+    margin-top: 8rem;
+  }
 }
 
 .layout_recent {
-    margin: 0 5%;
-    margin-top: 8rem;
-    display: flex;
-    flex-direction: column;
+  margin: 0 5%;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
 
-    @include respond(laptop) {
-        flex-direction: row;
-        margin: 0 4%;
-        margin-top: 8rem;
-    }
+  @include respond(laptop) {
+    flex-direction: row;
+    margin: 0 4%;
+    margin-top: 8rem;
+  }
 }

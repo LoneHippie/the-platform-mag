@@ -3,45 +3,45 @@
 @import "../styles/variables";
 
 .cover {
-    display: block;
-    position: relative;
-    // width: 100%;
-    max-height: 40rem;
-    max-width: 100%;
-    margin: 0 auto;
+  display: block;
+  position: relative;
+  // width: 100%;
+  max-height: 40rem;
+  max-width: 100%;
+  margin: 0 auto;
 
-    @include respond(landscapePhone) {
-        max-width: 40rem;
-    }
+  @include respond(landscapePhone) {
+    max-width: 40rem;
+  }
 
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .title {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    line-height: 2.95rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  line-height: 2.95rem;
 }
 
 .subtitle {
-    text-align: center;
-    font-family: $font-head;
-    color: $black-secondary;
-    margin-bottom: 4rem;
-    line-height: 3.1rem;
+  text-align: center;
+  font-family: $font-head;
+  color: $black-secondary;
+  margin-bottom: 4rem;
+  line-height: 3.1rem;
 }
 
 .back_button {
-    @include buttonOutline($black-primary);
-    display: block;
-    margin: 4rem 0;
+  @include buttonOutline($black-primary);
+  display: block;
+  margin: 4rem 0;
 }
 
 .main_content {
-    margin-bottom: 0.5rem;
-    @include respond(laptop) {
-        margin-right: 3rem;
-    }
+  margin-bottom: 0.5rem;
+  @include respond(laptop) {
+    margin-right: 3rem;
+  }
 }

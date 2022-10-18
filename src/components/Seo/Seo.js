@@ -1,12 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import * as React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Logo from '../../images/logo_full.svg';
+import Logo from "../../images/logo_full.svg";
 
 function Seo({ description, lang, meta, title, propImage, type }) {
-
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -39,8 +38,8 @@ function Seo({ description, lang, meta, title, propImage, type }) {
           content: metaDescription,
         },
         {
-          name: 'image',
-          content: propImage || Logo
+          name: "image",
+          content: propImage || Logo,
         },
         {
           property: `og:title`,
@@ -48,7 +47,7 @@ function Seo({ description, lang, meta, title, propImage, type }) {
         },
         {
           propery: `og:image`,
-          content: propImage || Logo
+          content: propImage || Logo,
         },
         {
           property: `og:description`,
@@ -76,20 +75,20 @@ function Seo({ description, lang, meta, title, propImage, type }) {
         },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
 export default Seo;

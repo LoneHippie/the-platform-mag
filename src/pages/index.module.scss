@@ -2,166 +2,167 @@
 @import "../styles/variables";
 
 .header {
-    width: 100%;
-    height: 55vh;
-    background-image: linear-gradient(to bottom right,
-        rgba($black-secondary, 0.6),
-        rgba($black-secondary, 0.2)
-    ), url('../images/bg_header.jpg');
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  height: 55vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba($black-secondary, 0.6),
+      rgba($black-secondary, 0.2)
+    ),
+    url("../images/bg_header.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .header_title {
-    position: relative;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    @include respond(landscapePhone) {
-        top: 50%;
-    }
+  @include respond(landscapePhone) {
+    top: 50%;
+  }
 
-    & > * {
-        text-align: center;
-        color: $white-primary;
-    }
+  & > * {
+    text-align: center;
+    color: $white-primary;
+  }
 }
 
 .mission_section {
+  padding: 7.5%;
 
-    padding: 7.5%;
+  @include respond(tablet) {
+    padding: 7.5% 10%;
+  }
 
-    @include respond(tablet) {
-        padding: 7.5% 10%;
-    }
+  & > h3 {
+    font-size: 4.5rem;
+    font-family: $font-head;
+    text-decoration: underline;
+    margin-bottom: 4.5rem;
+    text-align: center;
+  }
 
-    & > h3 {
-        font-size: 4.5rem;
-        font-family: $font-head;
-        text-decoration: underline;
-        margin-bottom: 4.5rem;
-        text-align: center;
-    }
+  & > p {
+    margin-bottom: 3rem;
+    line-height: 2.8rem;
+    font-weight: 600;
 
-    & > p {
-        margin-bottom: 3rem;
-        line-height: 2.8rem;
-        font-weight: 600;
-
-        color: $black-secondary;
-    }
+    color: $black-secondary;
+  }
 }
 
 .standards_section {
-    padding: 7.5%;
+  padding: 7.5%;
 
-    @include respond(tablet) {
-        padding: 7.5% 10%;
+  @include respond(tablet) {
+    padding: 7.5% 10%;
+  }
+
+  background: $black-secondary;
+  color: $white-primary;
+
+  & > h3 {
+    font-size: 4.5rem;
+    font-family: $font-head;
+    text-decoration: underline;
+    margin-bottom: 4.5rem;
+    text-align: center;
+  }
+
+  & > p {
+    margin-bottom: 3rem;
+    line-height: 2.8rem;
+    font-weight: 600;
+
+    color: $white-secondary;
+
+    & > strong {
+      text-decoration: underline;
     }
-
-    background: $black-secondary;
-    color: $white-primary;
-
-    & > h3 {
-        font-size: 4.5rem;
-        font-family: $font-head;
-        text-decoration: underline;
-        margin-bottom: 4.5rem;
-        text-align: center;
-    }
-
-    & > p {
-        margin-bottom: 3rem;
-        line-height: 2.8rem;
-        font-weight: 600;
-
-        color: $white-secondary;
-
-        & > strong {
-            text-decoration: underline;
-        }
-    }
+  }
 }
 
 .team_section {
-    padding: 7.5%;
+  padding: 7.5%;
 
-    @include respond(tablet) {
-        padding: 7.5% 10%;
-    }
+  @include respond(tablet) {
+    padding: 7.5% 10%;
+  }
 
-    & > h3 {
-        font-size: 4.5rem;
-        font-family: $font-head;
-        text-decoration: underline;
-        margin-bottom: 4.5rem;
-        text-align: center;
-    }
+  & > h3 {
+    font-size: 4.5rem;
+    font-family: $font-head;
+    text-decoration: underline;
+    margin-bottom: 4.5rem;
+    text-align: center;
+  }
 }
 
 .team_grid {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    grid-gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-gap: 4rem;
 
-    @include respond(tablet) {
-        grid-template-columns: repeat(2, auto);
-    }
-    @include respond(laptop) {
-        grid-gap: 2rem;
-        grid-template-columns: repeat(3, auto);
-    }
-    @include respond(desktop) {
-        grid-gap: 3rem;
-    }
+  @include respond(tablet) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @include respond(laptop) {
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, auto);
+  }
+  @include respond(desktop) {
+    grid-gap: 3rem;
+  }
 }
 
 .contact_section {
-    padding: 7.5%;
+  padding: 7.5%;
 
-    @include respond(tablet) {
-        padding: 7.5% 10%;
-    }
+  @include respond(tablet) {
+    padding: 7.5% 10%;
+  }
 
-    background: $black-secondary;
+  background: $black-secondary;
 }
 
 .contact_form {
-    border: 3.5px solid $white-secondary;
-    padding: 5%;
+  border: 3.5px solid $white-secondary;
+  padding: 5%;
 
-    &__header {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-bottom: 3rem;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
 
-        @include respond(tablet) {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        & > h3 {
-            color: $white-primary;
-            font-size: 4.5rem;
-            font-family: $font-head;
-
-            margin-bottom: 2rem;
-            @include respond(tablet) {
-                margin-bottom: 0;
-            }
-        }
-
-        & > div {
-            display: flex;
-            flex-direction: row;
-
-            & > a > img {
-                height: 5rem;
-                width: 5rem;
-                border-radius: 100px;
-            }
-        }
+    @include respond(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
     }
+
+    & > h3 {
+      color: $white-primary;
+      font-size: 4.5rem;
+      font-family: $font-head;
+
+      margin-bottom: 2rem;
+      @include respond(tablet) {
+        margin-bottom: 0;
+      }
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+
+      & > a > img {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 100px;
+      }
+    }
+  }
 }

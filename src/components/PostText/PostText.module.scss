@@ -2,22 +2,22 @@
 @import "../../styles/media_queries";
 
 .post_body {
-    padding: 0;
+  padding: 0;
 
-    & > p {
-        margin-bottom: 3rem;
-        line-height: 2.8rem;
-        font-weight: 600;
+  & > p {
+    margin-bottom: 3rem;
+    line-height: 2.8rem;
+    font-weight: 600;
 
-        color: $black-secondary;
+    color: $black-secondary;
 
-        & > strong {
-            color: $black-primary;
-            text-decoration: underline;
-        }
-
-        & > a {
-            color: #026bbb;
-        }
+    & > strong {
+      color: $black-primary;
+      text-decoration: underline;
     }
+
+    & > a {
+      color: #026bbb;
+    }
+  }
 }

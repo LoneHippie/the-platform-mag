@@ -3,99 +3,99 @@
 @import "../../styles/mixins";
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    width: 80%;
-    margin-bottom: 6rem;
+  width: 80%;
+  margin-bottom: 6rem;
 }
 
 .cover {
-    position: relative;
-    display: block;
-    width: 100%;
-    max-height: 30rem;
-    margin-bottom: 0.5rem;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-height: 30rem;
+  margin-bottom: 0.5rem;
 }
 
 .title {
-    font-family: $font-head;
-    font-size: 2.15rem;
-    font-weight: 800;
-    line-height: 2.3rem;
-    margin-bottom: 1rem;
+  font-family: $font-head;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 2.3rem;
+  margin-bottom: 1rem;
 }
 
 .meta_section {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin: 0.5rem 0;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 0.5rem 0;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 
-    border-bottom: 3.5px solid $black-primary;
+  border-bottom: 3.5px solid $black-primary;
 }
 
 .author_image {
-    display: block;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
 
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .meta_details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    & > * {
-        height: 50%;
-    }
+  & > * {
+    height: 50%;
+  }
 
-    & > h5 {
-        font-size: 2rem;
-        color: $black-primary;
-    }
-    & > h6 {
-        color: $black-secondary;
-    }
+  & > h5 {
+    font-size: 2rem;
+    color: $black-primary;
+  }
+  & > h6 {
+    color: $black-secondary;
+  }
 }
 
 .preview_text {
-    line-height: 2.2rem;
-    font-weight: 600;
-    font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  font-size: 2rem;
 
+  color: $black-secondary;
+
+  margin-bottom: 1.5rem;
+
+  max-height: 11.15rem;
+  overflow-y: hidden;
+
+  & > p > a {
+    text-decoration: none;
     color: $black-secondary;
+    cursor: default;
 
-    margin-bottom: 1.5rem;
-
-    max-height: 11.15rem;
-    overflow-y: hidden;
-
-    & > p > a {
-        text-decoration: none;
-        color: $black-secondary;
-        cursor: default;
-
-        &:hover {
-            cursor: default;
-        }
+    &:hover {
+      cursor: default;
     }
+  }
 }
 
 .cta_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .cta_button {
-    @include buttonOutline($black-primary);
-    width: fit-content;
-    font-size: 1.9rem;
-    padding: 0.5rem 1rem;
+  @include buttonOutline($black-primary);
+  width: fit-content;
+  font-size: 1.9rem;
+  padding: 0.5rem 1rem;
 }

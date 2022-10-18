@@ -3,84 +3,82 @@
 @import "../../styles/mixins";
 
 .card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    margin: 0 auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-top: 1.5rem;
-    // border-top: 3.5px solid $black-primary;
-    // border-bottom: 3.5px solid $black-primary;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding-top: 1.5rem;
 
-    z-index: 600;
+  z-index: 600;
 }
 
 .title {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .player {
-    height: 30rem;
+  height: 30rem;
 
-    @include respond(tablet) {
-        height: 45rem;
-    }
+  @include respond(tablet) {
+    height: 45rem;
+  }
 }
 
 .description {
-    color: $black-secondary;
-    font-size: 2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  color: $black-secondary;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .cta_section {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 3.5px solid $black-primary;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 3.5px solid $black-primary;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__edition {
+    @include buttonSolid($black-primary);
+    font-size: 2.8rem !important;
+    margin-bottom: 1rem;
+    padding: 1.5rem 3rem !important;
+
+    @include respond(landscapePhone) {
+      width: 100%;
+      margin-bottom: 3rem;
+      font-size: 3.6rem !important;
+    }
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    &__edition {
-        @include buttonSolid($black-primary);
-        font-size: 2.8rem !important;
-        margin-bottom: 1rem;
-        padding: 1.5rem 3rem !important;
-
-        @include respond(landscapePhone) {
-            width: 100%;
-            margin-bottom: 3rem;
-            font-size: 3.6rem !important;
-        }
+    @include respond(landscapePhone) {
+      flex-direction: row;
     }
 
-    &__info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    & > a {
+      @include buttonSolid($black-primary);
+      font-size: 2.8rem !important;
+      margin-bottom: 1rem;
+      padding: 1.5rem 3rem !important;
 
-        @include respond(landscapePhone) {
-            flex-direction: row;
-        }
-
-        & > a {
-            @include buttonSolid($black-primary);
-            font-size: 2.8rem !important;
-            margin-bottom: 1rem;
-            padding: 1.5rem 3rem !important;
-    
-            @include respond(landscapePhone) {
-                margin-left: 1.5rem;
-                margin-bottom: 0;
-                width: 30%;
-            }
-        }
+      @include respond(landscapePhone) {
+        margin-left: 1.5rem;
+        margin-bottom: 0;
+        width: 30%;
+      }
     }
+  }
 }
