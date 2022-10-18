@@ -43,7 +43,7 @@ const VideoStoriesPage = ({ data }) => {
               key={`section-${index}`}
             >
               <h2>{el}</h2>
-              <div className={classes.stories_group}>
+              <div>
                 {getStoriesByCategory(el).map((el, index) => (
                   <VideoCardStandard
                     key={`video-card-${index}`}
