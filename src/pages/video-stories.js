@@ -13,15 +13,23 @@ const VideoStoriesPage = ({ data }) => {
   const categories = [
     ...new Set(
       data.stories.nodes
-        .map((el) => el.type)
-        .filter((el) => el !== null || el !== undefined)
+        .map((el) => el.videoType)
+        .filter(
+          (el, index, self) =>
+            index ===
+            self.findIndex(
+              (t) =>
+                t.name === el.name &&
+                t.description.description === el.description.description
+            )
+        )
     ),
   ];
 
   const stories = data.stories.edges;
 
   const getStoriesByCategory = (category) => {
-    return stories.filter((el) => el.node.type === category);
+    return stories.filter((el) => el.node.videoType.name === category.name);
   };
 
   return (
@@ -37,22 +45,26 @@ const VideoStoriesPage = ({ data }) => {
 
       <PostContentLayout includeRecentEditionsBar={false}>
         <section className={classes.stories_section}>
-          {categories.map((el, index) => (
-            <section
-              className={classes.stories_section_category}
-              key={`section-${index}`}
-            >
-              <h2>{el}</h2>
-              <div>
-                {getStoriesByCategory(el).map((el, index) => (
-                  <VideoCardStandard
-                    key={`video-card-${index}`}
-                    video={el.node}
-                  />
-                ))}
-              </div>
-            </section>
-          ))}
+          {categories.map((el, index) => {
+            console.log({ el });
+            return (
+              <section
+                className={classes.stories_section_category}
+                key={`section-${index}`}
+              >
+                <h2>{el.name}</h2>
+                <p>{el.description.description}</p>
+                <div>
+                  {getStoriesByCategory(el).map((el, index) => (
+                    <VideoCardStandard
+                      key={`video-card-${index}`}
+                      video={el.node}
+                    />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </section>
       </PostContentLayout>
     </Layout>
@@ -75,11 +87,21 @@ export const pageQuery = graphql`
           postText {
             postText
           }
-          type
+          videoType {
+            name
+            description {
+              description
+            }
+          }
         }
       }
       nodes {
-        type
+        videoType {
+          name
+          description {
+            description
+          }
+        }
       }
     }
   }
