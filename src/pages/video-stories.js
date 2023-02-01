@@ -10,6 +10,7 @@ import {
 import * as classes from "./videoStories.module.scss";
 
 const VideoStoriesPage = ({ data }) => {
+  console.log({ data });
   const categories = [
     ...new Set(
       data.stories.nodes
@@ -20,7 +21,7 @@ const VideoStoriesPage = ({ data }) => {
             self.findIndex(
               (t) =>
                 t.name === el.name &&
-                t.description.description === el.description.description
+                t.description?.description === el.description?.description
             )
         )
     ),
@@ -53,7 +54,7 @@ const VideoStoriesPage = ({ data }) => {
                 key={`section-${index}`}
               >
                 <h2>{el.name}</h2>
-                <p>{el.description.description}</p>
+                <p>{el.description?.description}</p>
                 <div>
                   {getStoriesByCategory(el).map((el, index) => (
                     <VideoCardStandard
@@ -88,18 +89,22 @@ export const pageQuery = graphql`
             postText
           }
           videoType {
-            name
-            description {
-              description
+            ... on ContentfulVideoCategory {
+              name
+              description {
+                description
+              }
             }
           }
         }
       }
       nodes {
         videoType {
-          name
-          description {
-            description
+          ... on ContentfulVideoCategory {
+            name
+            description {
+              description
+            }
           }
         }
       }
