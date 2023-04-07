@@ -10,7 +10,6 @@ import {
 import * as classes from "./videoStories.module.scss";
 
 const VideoStoriesPage = ({ data }) => {
-  console.log({ data });
   const categories = [
     ...new Set(
       data.stories.nodes
@@ -47,7 +46,6 @@ const VideoStoriesPage = ({ data }) => {
       <PostContentLayout includeRecentEditionsBar={false}>
         <section className={classes.stories_section}>
           {categories.map((el, index) => {
-            console.log({ el });
             return (
               <section
                 className={classes.stories_section_category}

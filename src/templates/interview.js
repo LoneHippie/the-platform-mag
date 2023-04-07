@@ -41,7 +41,7 @@ const Interview = ({ data }) => {
 
           <PostText text={data.interview.text.text} />
 
-          {data.interview.isPartOfEdition ? (
+          {data.interview.isPartOfEdition && (
             <a
               className={classes.back_button}
               href={`/${data.interview.editionSlug}`}
@@ -49,12 +49,12 @@ const Interview = ({ data }) => {
             >
               Back To Edition
             </a>
-          ) : null}
+          )}
         </section>
 
-        {!data.interview.isPartOfEdition ? (
+        {!data.interview.isPartOfEdition && (
           <RecentEditionsBar editions={data.editions.edges} />
-        ) : null}
+        )}
       </PostContentLayout>
     </Layout>
   );

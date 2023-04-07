@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { graphql } from "gatsby";
 import {
   Layout,
@@ -20,38 +20,23 @@ const Edition = ({ data }) => {
         ), url(${data.edition.coverImage.file.url})
     `;
 
-  const generateArticleCards = (articles) => {
-    const editionArticles = articles.filter((el) => !el.subtitle && el.author);
+  const articles = useMemo(() => {
+    return data.edition.editionPosts.filter(
+      (el) => el.system.contentType.type.id === "article"
+    );
+  }, [data]);
 
-    return editionArticles.map((el, index) => (
-      <ArticleCardLarge key={`article-card-large-${index}`} article={el} />
-    ));
-  };
+  const interviews = useMemo(() => {
+    return data.edition.editionPosts.filter(
+      (el) => el.system.contentType.type.id === "interview"
+    );
+  }, [data]);
 
-  const hasInterviews = data.edition.editionPosts.some((el) => el.subtitle);
-
-  const generateInterviewCards = (interviews) => {
-    const editionInterviews = interviews.filter((el) => el.subtitle);
-
-    return editionInterviews.map((el, index) => (
-      <InterviewCardLarge
-        key={`interview-card-large-${index}`}
-        interview={el}
-      />
-    ));
-  };
-
-  const hasVoices = data.edition.editionPosts.some(
-    (el) => !el.subtitle && !el.author
-  );
-
-  const generateVoicesCards = (voices) => {
-    const editionVoices = voices.filter((el) => !el.subtitle && !el.author);
-
-    return editionVoices.map((el, index) => (
-      <VoicesCardLarge key={`voices-card-large-${index}`} voice={el} />
-    ));
-  };
+  const voices = useMemo(() => {
+    return data.edition.editionPosts.filter(
+      (el) => el.system.contentType.type.id === "voicesInTheCrowd"
+    );
+  }, [data]);
 
   return (
     <Layout darkNavIcons={false} darkFooterBackground={true}>
@@ -85,23 +70,32 @@ const Edition = ({ data }) => {
         <section className={classes.stories_section}>
           <h3>Key Stories</h3>
 
-          {generateArticleCards(data.edition.editionPosts)}
+          {articles.map((article, index) => (
+            <ArticleCardLarge article={article} key={`article-card-${index}`} />
+          ))}
 
-          {hasInterviews ? (
+          {!!interviews.length && (
             <>
               <h3>Featured Interview</h3>
 
-              {generateInterviewCards(data.edition.editionPosts)}
+              {interviews.map((interview, index) => (
+                <InterviewCardLarge
+                  interview={interview}
+                  key={`interview-card-${index}`}
+                />
+              ))}
             </>
-          ) : null}
+          )}
 
-          {hasVoices ? (
+          {!!voices.length && (
             <>
               <h3>Voices In The Crowd</h3>
 
-              {generateVoicesCards(data.edition.editionPosts)}
+              {voices.map((voice, index) => (
+                <VoicesCardLarge voice={voice} key={`voice-card-${index}`} />
+              ))}
             </>
-          ) : null}
+          )}
         </section>
 
         <section className={classes.quote_section}>
@@ -164,6 +158,13 @@ export const pageQuery = graphql`
           text {
             text
           }
+          system: sys {
+            contentType {
+              type: sys {
+                id
+              }
+            }
+          }
         }
         ... on ContentfulInterview {
           postDate(formatString: "MMMM YYYY")
@@ -180,6 +181,13 @@ export const pageQuery = graphql`
           editionSlug
           text {
             text
+          }
+          system: sys {
+            contentType {
+              type: sys {
+                id
+              }
+            }
           }
         }
         ... on ContentfulVoicesInTheCrowd {
@@ -198,6 +206,13 @@ export const pageQuery = graphql`
           }
           text {
             text
+          }
+          system: sys {
+            contentType {
+              type: sys {
+                id
+              }
+            }
           }
         }
       }

@@ -61,7 +61,7 @@ const Article = ({ data }) => {
 
           <PostText text={data.article.text.text} />
 
-          {data.article.isPartOfEdition ? (
+          {data.article.isPartOfEdition && (
             <a
               className={classes.back_button}
               href={`/${data.article.editionSlug}`}
@@ -69,12 +69,12 @@ const Article = ({ data }) => {
             >
               Back To Edition
             </a>
-          ) : null}
+          )}
         </section>
 
-        {!data.article.isPartOfEdition ? (
+        {!data.article.isPartOfEdition && (
           <RecentEditionsBar editions={data.editions.edges} />
-        ) : null}
+        )}
       </PostContentLayout>
     </Layout>
   );

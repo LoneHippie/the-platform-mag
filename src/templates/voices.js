@@ -38,7 +38,7 @@ const Voices = ({ data }) => {
 
           <PostText text={data.voice.text.text} />
 
-          {data.voice.isPartOfEdition ? (
+          {data.voice.isPartOfEdition && (
             <a
               className={classes.back_button}
               href={`/${data.voice.editionSlug}`}
@@ -46,12 +46,12 @@ const Voices = ({ data }) => {
             >
               Back To Edition
             </a>
-          ) : null}
+          )}
         </section>
 
-        {!data.voice.isPartOfEdition ? (
+        {!data.voice.isPartOfEdition && (
           <RecentEditionsBar editions={data.editions.edges} />
-        ) : null}
+        )}
       </PostContentLayout>
     </Layout>
   );
