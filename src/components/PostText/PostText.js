@@ -12,7 +12,6 @@ const PostText = ({ text }) => {
   useEffect(() => {
     if (postRef.current !== undefined) {
       const linkCollection = postRef.current.getElementsByTagName("a");
-
       if (!linkCollection.length) return;
 
       Array.from(linkCollection).forEach((link) => {
